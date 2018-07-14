@@ -1,0 +1,65 @@
+<%
+	/** примеры Magnific-popup
+	 * @name ui-demo/magnific-popup */
+
+	// Выгружаем инструменты
+	const {Button} = app.el;
+	const {media} = app.module;
+%>
+<div>
+	<%- new Button({
+		innerHTML: 'js-mfp-ajax',
+		class: 'js-init',
+		dataMfp: 'ajax',
+		dataMfpSrc: 'hidden/callback.php',
+		dataParam: JSON.stringify({
+			key: 'value'
+		})
+	}) %>
+
+	<%- new Button({
+		innerHTML: 'js-mfp-iframe',
+		class: 'js-init',
+		dataMfp: 'iframe',
+		dataMfpSrc: 'http://www.youtube.com/watch?v=4GUwXxqwyu4'
+	}) %>
+
+	<%- new Button({
+		innerHTML: 'js-mfp-inline',
+		class: 'js-init',
+		dataMfp: 'inline',
+		dataMfpSrc: '#demo-mfp-inline'
+	}) %>
+
+	<div style="display: none;">
+		<div id="demo-mfp-inline" class="popup">
+			<div class="container">
+				<div class="title title--size-h2">Inline demo</div>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aperiam beatae
+					consectetur consequuntur dolor ducimus eius enim, est maxime molestias necessitatibus nostrum
+					nulla quaerat ratione veritatis, voluptate voluptatibus voluptatum.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div>
+	<div class="js-init" data-mfp="gallery">
+		<%- new Button({
+			innerHTML: 'js-mfp-gallery 1',
+			dataMfpSrc: media('assets/images/placeholders/no-avatar-default.png')
+		}) %>
+
+		<%- new Button({
+			innerHTML: 'js-mfp-gallery youtube',
+			dataMfpSrc: 'http://www.youtube.com/watch?v=4GUwXxqwyu4'
+		}) %>
+
+		<%- new Button({
+			innerHTML: 'js-mfp-gallery 2',
+			dataMfpSrc: media('assets/images/placeholders/no-image-default.png')
+		}) %>
+	</div>
+</div>

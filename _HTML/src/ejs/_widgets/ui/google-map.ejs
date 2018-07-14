@@ -1,0 +1,120 @@
+<%
+	/**
+	 * @name ui/google-map.ejs */
+
+	// Выгружаем инструменты
+	const {media} = app.module;
+	const classnames = app.requireNodeModule('classnames');
+
+	const {
+		// Деструктуризация входящих данных
+	} = app.entry;
+%>
+<div class="_mb-def">
+	<div class="google-map js-init" data-google-map>
+		<div class="google-map__container" data-google-map-container></div>
+		<div style="display: none;">
+			<%
+				const demoPoint = {
+					icon: media('assets/images/placeholders/google-map-marker.png'),
+					position: {
+						lat: 46.630820,
+						lng: 32.6034777
+					}
+				}
+			%>
+			<div class="google-map-point is-active"
+					data-wstabs-ns="google-map-single" data-wstabs-button="0"
+					data-google-map-point='<%- JSON.stringify(demoPoint, null, '\t') %>'>
+				<div class="google-map-infowindow" data-google-map-infowindow>
+					<div class="wysiwyg">
+						<p>
+							Lorem ipsum dolor sit amet <br>
+							<a href="tel:xxx">+38(050)123-45-67</a> <br>
+							<a href="mailto:demo-site@gmail.com">demo-site@gmail.com</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="google-map js-init" data-google-map>
+	<div class="grid grid--space-def">
+		<div class="gcell gcell--4">
+			<%
+				const demoPoints = [{
+					data: {
+						zoom: 5,
+						icon: media('assets/images/placeholders/google-map-marker.png'),
+						position: {
+							lat: 46.630820,
+							lng: 32.6034777
+						}
+					},
+					infowindow: `
+					<div class="google-map-infowindow" data-google-map-infowindow>
+						<div class="wysiwyg">
+							<p>
+								1 Lorem ipsum dolor sit amet <br>
+								<a href="tel:xxx">+38(050)123-45-67</a> <br>
+								<a href="mailto:demo-site@gmail.com">demo-site@gmail.com</a>
+							</p>
+						</div>
+					</div>`
+				}, {
+					data: {
+						zoom: 6,
+						icon: media('assets/images/placeholders/google-map-marker-2.png'),
+						position: {
+							lat: 49.9947277,
+							lng: 36.1457428
+						}
+					},
+					infowindow: `
+					<div class="google-map-infowindow" data-google-map-infowindow>
+						<div class="wysiwyg">
+							<p>
+								2 Lorem ipsum dolor sit amet <br>
+								<a href="tel:xxx">+38(050)123-45-67</a> <br>
+								<a href="mailto:demo-site@gmail.com">demo-site@gmail.com</a>
+							</p>
+						</div>
+					</div>`
+				}, {
+					data: {
+						zoom: 7,
+						icon: media('assets/images/placeholders/google-map-marker-3.png'),
+						position: {
+							lat: 49.8327787,
+							lng: 23.9421961
+						}
+					},
+					infowindow: `
+					<div class="google-map-infowindow" data-google-map-infowindow>
+						<div class="wysiwyg">
+							<p>
+								3 Lorem ipsum dolor sit amet <br>
+								<a href="tel:xxx">+38(050)123-45-67</a> <br>
+								<a href="mailto:demo-site@gmail.com">demo-site@gmail.com</a>
+							</p>
+						</div>
+					</div>`
+				}]
+			%>
+			<% demoPoints.forEach((point, i) => { %>
+				<div class="<%- classnames('google-map-point', {'is-active': !i}) %>"
+						data-wstabs-ns="google-map-multiple" data-wstabs-button="<%- i %>"
+						data-google-map-point='<%- JSON.stringify(point.data, null, '\t') %>'>
+					<div class="title title--size-h4">Point title <%- i + 1 %></div>
+					<%- point.infowindow %>
+				</div>
+			<% }) %>
+		</div>
+		<div class="gcell gcell--8">
+			<div class="google-map__container" data-google-map-container></div>
+		</div>
+	</div>
+</div>

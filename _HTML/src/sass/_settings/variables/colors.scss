@@ -1,0 +1,34 @@
+////
+/// @group _settings/
+////
+
+/// Карта основых цветов
+/// @type {Map}
+$colors: (
+	main: #333,
+	alt: #c33,
+	alt2: #569700,
+	border: #e7e7e7,
+	bg: #fafafa,
+
+	text: #234,
+	text2: #9c9c9c,
+	light: #eee,
+
+	dark: #000,
+	secondary: #313131,
+	active: #ff0,
+	accent: #a1a1fc,
+	warn: #c89600,
+	error: #f00
+);
+
+/// Карта цветов для ссылок
+/// @type {Map}
+$colors-link: (
+	default: map-get($colors, main),
+	visited: darken(map-get($colors, main), 12%),
+	hover: map-get($colors, secondary),
+	active: map-get($colors, text)
+)
+

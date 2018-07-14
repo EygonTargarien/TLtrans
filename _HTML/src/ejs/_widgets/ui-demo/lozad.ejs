@@ -1,0 +1,40 @@
+<%
+	/** примеры
+	 * @name ui-demo/lozad */
+
+	// выгружаем инструменты
+	const {media} = app.module;
+%>
+<div class="grid grid--2 grid--def-3 grid--space-def">
+	<div class="gcell">
+		<img class="lozad js-init" alt width="750" height="750"
+				src="<%- media('assets/images/placeholders/no-avatar-thumb.png') %>"
+				data-lozad="<%- media('assets/images/placeholders/no-avatar-original.png') %>">
+	</div>
+	<div class="gcell">
+		<picture class="lozad js-init" style="display: block; min-height: 1rem"
+				data-iesrc="<%- media('assets/images/placeholders/no-image-original.png') %>">
+			<source media="(min-width: 1280px)"
+					srcset="<%- media('assets/images/placeholders/no-image-original.png') %>">
+			<source media="(min-width: 980px)"
+					srcset="<%- media('assets/images/placeholders/no-image-default.png') %>">
+			<source media="(min-width: 320px)"
+					srcset="<%- media('assets/images/placeholders/no-image-thumb.png') %>">
+		</picture>
+	</div>
+	<div class="gcell">
+		<div class="_def-show">
+			<img class="lozad js-init" alt width="750" height="750"
+					src="<%- media('assets/images/empty.gif') %>"
+					data-lozad="<%- media('assets/images/demo-2-image.png') %>">
+		</div>
+	</div>
+
+	<div class="gcell">
+		<div class="_def-show">
+			<div class="lozad js-init" style="background-image: url(<%- media('assets/images/placeholders/no-avatar-thumb.png') %>);width: 400px; height: 400px"
+					data-lozad="<%- media('assets/images/demo-2-image.png') %>">
+			</div>
+		</div>
+	</div>
+</div>

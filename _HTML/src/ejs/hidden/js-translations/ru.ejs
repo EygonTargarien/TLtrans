@@ -1,0 +1,11 @@
+<%
+	/** Принт js переводов для верстки
+	 * через глобальный объект `window.jsTranslations`
+	 * @name hidden/js-translations/ru */
+
+
+	/** расширение глобального объекта app
+	 * @see module:core */
+	app.require('core.js')(app);
+
+%><%- app.module.__.jsTranslations('ru') %>

@@ -1,0 +1,42 @@
+<%
+	/** Шаблон страницы c примерами форм
+	 * @name ui-forms.ejs */
+
+	/** установка лейаута страницы */
+	app.setLayout('default-view.ejs');
+
+	/** расширение глобального объекта app
+	 * @see module:core */
+	app.require('core.js')(app);
+
+	// выгружаем инструменты
+	const {currentView, views} = app.data;
+
+	// хлебные крошки
+	const breadcrumbsList = [
+		views.index,
+		views.ui,
+		currentView
+	];
+%>
+<div class="section _pt-def">
+	<div class="container">
+		<div class="title title--size-h1"><%- currentView.title %></div>
+		<%- app.widget('breadcrumbs.ejs', {list: breadcrumbsList}) %>
+		<div class="grid grid--1 grid--md-2 grid--space-def">
+			<div class="gcell">
+				<%- app.widget('forms/demo-form-full.ejs') %>
+				<%- app.widget('forms/demo-form-equal.ejs') %>
+				<%- app.widget('forms/demo-form-numbers.ejs') %>
+				<%- app.widget('forms/demo-form-message.ejs') %>
+			</div>
+			<div class="gcell">
+				<%- app.widget('forms/demo-form-phone-mask.ejs') %>
+				<%- app.widget('forms/demo-form-select.ejs') %>
+				<%- app.widget('forms/demo-form-check.ejs') %>
+				<%- app.widget('forms/demo-form-remote.ejs') %>
+				<%- app.widget('forms/demo-form-error.ejs') %>
+			</div>
+		</div>
+	</div>
+</div>

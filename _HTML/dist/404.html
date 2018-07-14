@@ -1,0 +1,154 @@
+<?php if (!defined('HOST')) { define('HOST', '../../'); } $hiddenFolder = 'hidden/'; require_once($hiddenFolder . 'HTML.php'); use Core\HTML;  if (!function_exists('__')) { require_once($hiddenFolder . 'i18n/I18n.php'); \I18n::lang('en'); } ?>
+<!doctype html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>404 Страница не найдена</title>
+		<meta name="description" lang="en" content="description">
+		<meta name="keywords" lang="en" content="keywords">
+
+		<?php /* @TODO мета тег, только для проекта верстки */ ?>
+		<meta name="robots" content="noindex, nofollow">
+
+		<?php /* Open Graph */ ?>
+		<meta property="og:title" content="404 Страница не найдена">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="wezom-starter-template-default">
+		<meta property="og:url" content="http://TLtrans/404">
+		<meta property="og:description" content="Краткий текст (новости, товара и т.д)">
+
+		<?php /* Touch */ ?>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+
+		<?php /* Viewport */ ?>
+
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+		<meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Your Website Title" />
+		<meta property="og:description" content="Your description" />
+		<meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
+
+		<?php /* Favicons */ ?>
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo HTML::media( 'assets/favicons/apple-touch-icon.png', false, true ); ?>">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo HTML::media( 'assets/favicons/favicon-32x32.png', false, true ); ?>">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo HTML::media( 'assets/favicons/favicon-16x16.png', false, true ); ?>">
+		<link rel="manifest" href="<?php echo HTML::media( 'assets/favicons/manifest.json', false, false ); ?>">
+		<link rel="mask-icon" href="<?php echo HTML::media( 'assets/favicons/safari-pinned-tab.svg', false, true ); ?>" color="#d01400">
+		<meta name="apple-mobile-web-app-title" content="Site name">
+		<meta name="application-name" content="Site name">
+		<meta name="msapplication-config" content="<?php echo HTML::media( 'assets/favicons/browserconfig.xml', false, true ); ?>">
+		<meta name="theme-color" content="#d01400">
+
+		<?php /* Основные стили страницы */ ?>
+		<style id="webpack-style-loader-insert-before-this"></style>
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/vendors-and-helpers.css', false, true ); ?>">
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/editor.css', false, true ); ?>">
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/style.css', false, true ); ?>">
+
+		<?php /* @TODO Общие критикал скрипты для всех страниц */ ?>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/static/critical/svg4everybody.js' ); ?>
+;(function(){document.addEventListener("DOMContentLoaded",function(){svg4everybody()})})();</script>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/critical/localstorage-test.js' ); ?></script>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/critical/localstorage-fonts.js' ); ?>
+;(function(window){window.loadFontsToLocalStorage('Fonts-WEZOM-STARTER-TEMPLATE-DEFAULT','<?php echo HTML::media( 'assets/css/static/fonts/b64-woff.css', false, true ); ?>','<?php echo HTML::media( 'assets/css/static/fonts/b64-woff2.css', false, true ); ?>');})(window);</script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="section _flex-grow">
+
+				<div class="section section--header">
+					<div class="container">
+						<div class="title title--size-h3">
+							<a href="index.html">Error header</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="section _pt-def">
+					<div class="container">
+						<div class="title title--size-h1">404 Страница не найдена</div>
+
+						<div class="wysiwyg">
+							<p class="_ellipsis">
+								<code id="window-location-href">&nbsp;</code>
+							</p>
+							<p>
+								<em>К сожалению, страница, которую Вы запросили, не была найдена.</em>
+								<br> Вы можете перейти на
+								<a href="index.html">Главную страницу</a>, чтобы найти нужную Вам информацию
+							</p>
+						</div>
+						<script>
+			;(function () {
+				window.setTimeout(function () {
+					var el = document.getElementById('window-location-href');
+					if (el !== null) {
+						el.textContent = window.location.href;
+					}
+				}, 0);
+			})();
+		</script>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<?php /* @TODO Заменить на путь к файлу js переводам админки `Media/js-translations/${lang}.js` */ ?>
+		<script src="<?php echo HTML::media( '../_HTML/dist/hidden/js-translations/en.js', false, true ); ?>"></script>
+		<script>
+	window.wezomConfig = {
+		<?php /* @TODO Заменить Google Maps JavaScript API
+	https://developers.google.com/maps/documentation/javascript/get-api-key#key */ ?>
+		googleMapQueries: {
+			key: 'AIzaSyA0iD6g_lPIH2uMxwOwennIBu5q1qszd_s',
+			language: 'uk',
+			region: 'UA'
+		}
+	}
+</script>
+		<?php /* Основные скрипты страницы */ ?>
+		<script src="<?php echo HTML::media( 'assets/js/modernizr.js', false, true ); ?>"></script>
+		<script src="<?php echo HTML::media( 'assets/js/initialize.js', false, true ); ?>"></script>
+
+		<?php /* @TODO Определение старых браузеров */ ?>
+		<script>window.$wzmOld_URL_IMG = '<?php echo HTML::media( 'assets/css/static/pic/wezom-info-red.gif', false, true ); ?>';</script>
+		<script async defer src="<?php echo HTML::media( 'assets/js/static/wezom-old.min.js', false, true ); ?>"></script>
+
+		<?php /* Плашка с уведомлением об отключенном JavaScript */ ?>
+
+		<noscript>
+			<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/noscript.css', false, true ); ?>">
+			<div class="noscript-msg">
+				<input id="noscript-msg__input" class="noscript-msg__input" type="checkbox" title="Закрыть">
+				<div class="noscript-msg__container">
+					<label class="noscript-msg__close" for="noscript-msg__input">&times;</label>
+					<a class="noscript-msg__wezom-link" href="http://wezom.com.ua/" target="_blank" title="Агентство системных интернет-решений Wezom">&nbsp;</a>
+					<div class="noscript-msg__content">
+
+						<p>В Вашем браузере
+							<b>отключен JavaScript!</b> Для корректной работы с сайтом необходима поддержка Javascript.
+						</p>
+						<p>Мы рекомендуем Вам включить использование JavaScript в настройках вашего браузера.</p>
+					</div>
+				</div>
+			</div>
+		</noscript>
+
+		<!---->
+
+	</body>
+</html>

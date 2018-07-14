@@ -1,0 +1,15 @@
+////
+/// @group _blocks/
+////
+
+/// Демо блок
+.demo {
+	border: 1px solid;
+	padding: 2rem;
+	border-radius: map-get($sizes, border-radius);
+	margin-bottom: 1rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

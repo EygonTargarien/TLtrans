@@ -1,0 +1,33 @@
+////
+/// @group _blocks/
+////
+
+/// Description
+.sitemap {
+	padding: 1rem;
+	border: 1px solid map-get($colors, border);
+	border-radius: map-get($sizes, border-radius);
+	max-width: map-get($breakpoints, md);
+
+	@include media(md) {
+		padding: 1.5rem;
+	}
+
+	a {
+		&[href] {
+			color: map-get($colors-link, default);
+
+			&:visited {
+				color: map-get($colors-link, visited);
+			}
+
+			&:hover {
+				color: map-get($colors-link, hover);
+			}
+
+			&:active {
+				color: map-get($colors-link, active);
+			}
+		}
+	}
+}

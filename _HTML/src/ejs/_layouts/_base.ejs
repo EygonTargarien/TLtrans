@@ -1,0 +1,40 @@
+<%
+	/** @namespace app
+	 * @see module:core
+	 * @see module:docs */
+
+	/** Лейаут основной структуры страниц
+	 * @name _base */
+
+	// php шапка
+	let headPhp = '';
+	if (app.data.usePHP) {
+		headPhp = app.widget('head/php.ejs').replace(/(\r)?\n/g, ' ');
+		headPhp = headPhp.replace(/(\t|\s+$)/g, '');
+	}
+
+%><%- headPhp %><!doctype html>
+<html lang="<%- app.data.lang %>">
+	<head>
+		<%- app.widget('head/meta.ejs') %>
+		<%- app.widget('head/favicons.ejs') %>
+		<% if (app.data.useCritical) { %>
+			<%- app.widget('head/critical-css.ejs') %>
+		<% } else { %>
+			<%- app.widget('stylesheets.ejs') %>
+		<% } %>
+		<%- app.widget('head/critical-js.ejs', {base64fonts: true}) %>
+	</head>
+	<body>
+		<%- app.body %>
+
+		<% if (app.data.useCritical) { %>
+			<%- app.widget('stylesheets.ejs') %>
+		<% } %>
+		<%- app.widget('scripts.ejs') %>
+		<%- app.widget('noscript.ejs') %>
+		<%- app.blocks.cookie %>
+
+		<!--<%- //  app.widget('preview.ejs') %>-->
+	</body>
+</html>

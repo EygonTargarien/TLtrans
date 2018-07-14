@@ -1,0 +1,11 @@
+////
+/// @group _settings/
+////
+
+/// Карта основых переходов
+/// @type {Map}
+$transitions: (
+	fast: .125s ease,
+	normal: .25s ease,
+);
+

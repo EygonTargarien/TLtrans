@@ -1,0 +1,105 @@
+<%
+/** шапка сайта
+ * @name header.ejs */
+
+		// выгружаем инструменты
+const {views, currentView , indexHref} = app.data;
+const {media} = app.module;
+const {SvgIcon} = app.el;
+%>
+
+<header class="header js-fixHeaderWrap">
+	<div class="header__wrap js-fixHeader">
+		<div class="header__top">
+			<div class="container">
+				<div class="grid _justify-between">
+					<div class="gcell">
+						<div class="option">
+							<div class="header__face">
+								<div id="fb-root"></div>
+								<script>(function(d, s, id) {
+										var js, fjs = d.getElementsByTagName(s)[0];
+										if (d.getElementById(id)) return;
+										js = d.createElement(s); js.id = id;
+										js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+										fjs.parentNode.insertBefore(js, fjs);
+									}(document, 'script', 'facebook-jssdk'));</script>
+								<div class="fb-like"
+										data-href="http://gameboosting.zzz.com.ua"
+										data-layout="button_count"
+										data-action="like"
+										data-colorscheme="dark"
+										data-size="small"
+										data-show-faces="false"
+										data-share="false"></div>
+							</div>
+
+							<div class="option__block">
+								<div class="option__head" data-toggle-btn="currency">
+									<span>EUR, €</span>
+								</div>
+								<div class="option__cnt" data-toggle-cnt="currency">
+									<a href="#" class="option__item has-active">EUR, €</a>
+									<a href="#" class="option__item">USD, $</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="gcell">
+						<div class="option option--column">
+							<div class="option__block">
+								<div class="option__head">
+									<div class="option__enter js-init">Your cabinet</div>
+								</div>
+								<div class="option__content">
+									<ul class="option__list">
+										<li class="option__item">
+											<a href="orders.html" class="option__link">My orders</a>
+										</li>
+										</li>
+										<li class="option__item">
+											<a href="edit.html" class="option__link">Edit profile</a>
+										</li>
+										<li class="option__item">
+											<a href="history-cabinet.html" class="option__link">Order history</a>
+										</li>
+										<li class="option__item">
+											<a href="money.html" class="option__link">buy Dark money</a>
+									</ul>
+								</div>
+							</div>
+
+							<a href="money.html" class="option__coin">
+								<div class="coin">
+									<div class="coin__icon"></div>
+									<div class="coin__val"><span>3460</span> DM</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__main">
+			<% if (currentView.name === views.index.name) { %>
+			<a class="header__logo">
+				<img src="<%- media('assets/css/static/pic/logo.png')%>" alt="">
+			</a>
+			<% } else { %>
+			<a href="<%- views.index.href %>" class="header__logo">
+				<img src="<%- media('assets/css/static/pic/logo.png')%>" alt="">
+			</a>
+			<% } %>
+
+
+		</div>
+		<div class="header__menu">
+			<div class="container">
+				<%- app.widget('blocks/menu.ejs') %>
+			</div>
+		</div>
+	</div>
+
+</header>
+

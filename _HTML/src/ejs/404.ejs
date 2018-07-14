@@ -1,0 +1,40 @@
+<%
+	/** Шаблон страницы 404
+	 * @name 404.ejs */
+
+	/** установка лейаута страницы */
+	app.setLayout('error-view.ejs');
+
+	/** расширение глобального объекта app
+	 * @see module:core */
+	app.require('core.js')(app);
+
+	// выгружаем инструменты
+	const {currentView, views} = app.data;
+%>
+<div class="section _pt-def">
+	<div class="container">
+		<div class="title title--size-h1"><%- currentView.title %></div>
+
+		<div class="wysiwyg">
+			<p class="_ellipsis">
+				<code id="window-location-href">&nbsp;</code>
+			</p>
+			<p>
+				<em>К сожалению, страница, которую Вы запросили, не была найдена.</em> <br>
+				Вы можете перейти на
+				<a href="<%- views.index.href %>">Главную страницу</a>, чтобы найти нужную Вам информацию
+			</p>
+		</div>
+		<script>
+			;(function () {
+				window.setTimeout(function () {
+					var el = document.getElementById('window-location-href');
+					if (el !== null) {
+						el.textContent = window.location.href;
+					}
+				}, 0);
+			})();
+		</script>
+	</div>
+</div>

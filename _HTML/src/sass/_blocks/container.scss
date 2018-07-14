@@ -1,0 +1,27 @@
+////
+/// @group _blocks/
+////
+
+/// Блок для центрирования контента
+.container {
+	width: 100%;
+	flex-basis: 100%;
+	max-width: map-get($sizes, container-width);
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+
+	& &,
+	&--no-gap {
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&--full {
+		max-width: 100%;
+	}
+
+	@include clearfix();
+}

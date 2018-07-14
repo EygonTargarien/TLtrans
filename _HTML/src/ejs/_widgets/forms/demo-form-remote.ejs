@@ -1,0 +1,25 @@
+<%
+	/**
+	 * @name forms/demo-form-remote.ejs */
+
+	// Выгружаем инструменты
+	const {FormInput, Button} = app.el;
+%>
+<div class="demo">
+	<div class="title title--size-h3">Remote</div>
+	<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+		<div class="form-group">
+			<%- new FormInput({
+				type: 'email',
+				name: 'email',
+				value: 'demo@site.com',
+				dataRuleRemote: './hidden/response/email.php'
+			}) %>
+		</div>
+
+		<div class="form-group">
+			<%- new Button.Submit() %>
+			<%- new Button.Reset() %>
+		</div>
+	</form>
+</div>

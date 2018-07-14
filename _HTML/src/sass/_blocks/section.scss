@@ -1,0 +1,26 @@
+////
+/// @group _blocks/
+////
+
+/// Описание
+.section {
+	position: relative;
+
+	&--header {
+		background-color: #e9e9e9;
+		padding: rem(20) 0;
+	}
+
+	&--footer {
+		background-color: #333;
+		color: #fff;
+		padding: rem(20) 0;
+	}
+	&--main{
+		margin-bottom: 50px;
+	}
+	&--mainScreen{
+		//display: flex;
+		//flex-direction: column;
+	}
+}

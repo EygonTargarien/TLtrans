@@ -1,0 +1,67 @@
+<%
+	/** Заготовка аккордиона
+	 * @name ui/accordion.ejs */
+
+	// выгружаем инструменты
+	const classnames = app.requireNodeModule('classnames');
+	const {Button} = app.el;
+
+	const demoBlock = `<div class="demo">
+		<div class="wysiwyg">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci expedita harum iusto minima mollitia nulla officiis placeat, quam. Commodi ducimus earum incidunt inventore mollitia optio sequi, temporibus! Alias eligendi, unde.</p>
+		</div>
+	</div>`;
+
+	const {
+		ns = 'accordion',
+		type = 'single',
+		slideTime = 300,
+		active = 0,
+		openActive = true,
+		openClass = 'is-open',
+		list = [{
+			button: new Button({class: 'button--full-width _mb-sm', innerHTML: 'Item 1'}),
+			block: demoBlock
+		}, {
+			button: new Button({class: 'button--full-width _mb-sm', innerHTML: 'Item 2'}),
+			block: demoBlock
+		}, {
+			button: new Button({class: 'button--full-width _mb-sm', innerHTML: 'Item 3'}),
+			block: demoBlock
+		}]
+	} = app.entry;
+
+	if (list.length === 0) {
+		// noinspection JSAnnotator
+		return '';
+	}
+
+	const param = {type, openClass, slideTime}
+%>
+<ul class="accordion js-init" data-accordion='<%- JSON.stringify(param) %>'>
+	<% list.forEach((item, i) => { %>
+		<li class="accordion-item _mb-sm">
+			<%
+				const isActive = i === active;
+				const isOpen = isActive && openActive;
+				const blockStyle = isOpen ? '' : ' style="display: none"';
+				const buttonClasses = classnames('accordion-item__button', {
+					'is-active': isActive,
+					[openClass]: isOpen
+				});
+				const blockClasses = classnames('accordion-item__block', {
+					'is-active': isActive,
+					[openClass]: isOpen
+				});
+			%>
+			<div class="<%- buttonClasses %>"
+					data-wstabs-ns="<%- ns %>" data-wstabs-button="<%- i %>">
+				<%- item.button %>
+			</div>
+			<div class="<%- blockClasses %>" <%- blockStyle %>
+					data-wstabs-ns="<%- ns %>" data-wstabs-block="<%- i %>">
+				<%- item.block %>
+			</div>
+		</li>
+	<% }) %>
+</ul>

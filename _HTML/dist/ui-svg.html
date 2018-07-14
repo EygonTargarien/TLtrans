@@ -1,0 +1,561 @@
+<?php if (!defined('HOST')) { define('HOST', '../../'); } $hiddenFolder = 'hidden/'; require_once($hiddenFolder . 'HTML.php'); use Core\HTML;  if (!function_exists('__')) { require_once($hiddenFolder . 'i18n/I18n.php'); \I18n::lang('en'); } ?>
+<!doctype html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>UI SVG Icons</title>
+		<meta name="description" lang="en" content="description">
+		<meta name="keywords" lang="en" content="keywords">
+
+		<?php /* @TODO мета тег, только для проекта верстки */ ?>
+		<meta name="robots" content="noindex, nofollow">
+
+		<?php /* Open Graph */ ?>
+		<meta property="og:title" content="UI SVG Icons">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="wezom-starter-template-default">
+		<meta property="og:url" content="http://TLtrans/ui-svg">
+		<meta property="og:description" content="Краткий текст (новости, товара и т.д)">
+
+		<?php /* Touch */ ?>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+
+		<?php /* Viewport */ ?>
+
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+		<meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Your Website Title" />
+		<meta property="og:description" content="Your description" />
+		<meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
+
+		<?php /* Favicons */ ?>
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo HTML::media( 'assets/favicons/apple-touch-icon.png', false, true ); ?>">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo HTML::media( 'assets/favicons/favicon-32x32.png', false, true ); ?>">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo HTML::media( 'assets/favicons/favicon-16x16.png', false, true ); ?>">
+		<link rel="manifest" href="<?php echo HTML::media( 'assets/favicons/manifest.json', false, false ); ?>">
+		<link rel="mask-icon" href="<?php echo HTML::media( 'assets/favicons/safari-pinned-tab.svg', false, true ); ?>" color="#d01400">
+		<meta name="apple-mobile-web-app-title" content="Site name">
+		<meta name="application-name" content="Site name">
+		<meta name="msapplication-config" content="<?php echo HTML::media( 'assets/favicons/browserconfig.xml', false, true ); ?>">
+		<meta name="theme-color" content="#d01400">
+
+		<?php /* Основные стили страницы */ ?>
+		<style id="webpack-style-loader-insert-before-this"></style>
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/vendors-and-helpers.css', false, true ); ?>">
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/editor.css', false, true ); ?>">
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/style.css', false, true ); ?>">
+
+		<?php /* @TODO Общие критикал скрипты для всех страниц */ ?>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/static/critical/svg4everybody.js' ); ?>
+;(function(){document.addEventListener("DOMContentLoaded",function(){svg4everybody()})})();</script>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/critical/localstorage-test.js' ); ?></script>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/critical/localstorage-fonts.js' ); ?>
+;(function(window){window.loadFontsToLocalStorage('Fonts-WEZOM-STARTER-TEMPLATE-DEFAULT','<?php echo HTML::media( 'assets/css/static/fonts/b64-woff.css', false, true ); ?>','<?php echo HTML::media( 'assets/css/static/fonts/b64-woff2.css', false, true ); ?>');})(window);</script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="section section--mainScreen _flex-grow">
+
+				<div class="section _pt-def">
+					<div class="container">
+						<div class="title title--size-h1">UI SVG Icons</div>
+
+						<div class="breadcrumbs">
+
+							<span>
+								<a href="index.html">Главная страница</a>
+							</span>
+
+							<span>
+								<a href="ui.html">UI Kit</a>
+							</span>
+
+							<span>
+								<a>UI SVG Icons</a>
+							</span>
+
+						</div>
+
+					</div>
+					<div class="container container--full _ptb-def">
+
+						<style>
+			.svg-sprite-icon {
+				padding: 5%;
+				border-radius: .3rem;
+				background-color: #eee;
+			}
+			.svg-sprite-icon__top {
+				position: relative;
+				width: 100%;
+				padding-top: 100%;
+				background-color: #fff;
+			}
+			.svg-sprite-icon__svg {
+				position: absolute;
+				top: 5%;
+				left: 5%;
+				width: 90%;
+				height: 90%;
+				border: 1px dashed #ddd;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.svg-sprite-icon__svg > svg {
+				width: 100%;
+				height: 100%;
+			}
+			.svg-sprite-icon__name {
+				margin-top: 5%;
+				text-align: center;
+				max-width: 100%;
+				font-size: 13px;
+				/*white-space: nowrap;*/
+				/*overflow: hidden;*/
+				/*text-overflow: ellipsis;*/
+			}
+		</style>
+
+						<div class="grid grid--space-sm grid--4 grid--md-6 grid--def-10">
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 129 129" width="129" height="129">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'arrleft' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="arrleft">arrleft</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 129 129" width="129" height="129">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'arrright' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="arrright">arrright</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 37 37" width="37" height="37">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'basket' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="basket">basket</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 26 26" width="26" height="26">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'check' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="check">check</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 22.88 22.88" width="22.88" height="22.88">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'close' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="close">close</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 442.003 442.003" width="442.003" height="442.003">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'currency' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="currency">currency</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 484.184 484.184" width="484.184" height="484.184">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'dollar' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="dollar">dollar</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 401.987 401.987" width="401.987" height="401.987">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'euro' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="euro">euro</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 96.124 96.123" width="96.124" height="96.123">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'facebook' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="facebook">facebook</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 491.858 491.858" width="491.858" height="491.858">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'google' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="google">google</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 57 21" width="57" height="21">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'icon-wezom' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="icon-wezom">icon-wezom</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 100 100" width="100" height="100">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'icon-youtube-play' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="icon-youtube-play">icon-youtube-play</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 438.536 438.536" width="438.536" height="438.536">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'instagram' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="instagram">instagram</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 512 512" width="512" height="512">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'language' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="language">language</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 31.427 31.427" width="31.427" height="31.427">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'minus' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="minus">minus</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 31.49 31.49" width="31.49" height="31.49">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'nextpage' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="nextpage">nextpage</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 297 297" width="297" height="297">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'person' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="person">person</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 578.106 578.106" width="578.106" height="578.106">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'phone' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="phone">phone</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 31.444 31.444" width="31.444" height="31.444">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'plus' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="plus">plus</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 510.127 510.127" width="510.127" height="510.127">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'ruble' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="ruble">ruble</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 30.239 30.239" width="30.239" height="30.239">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'search' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="search">search</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 334.5 334.5" width="334.5" height="334.5">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'sent' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="sent">sent</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 612 612" width="612" height="612">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'twitter' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="twitter">twitter</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 304.36 304.36" width="304.36" height="304.36">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'vkontakte' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="vkontakte">vkontakte</div>
+								</div>
+							</div>
+
+							<div class="_cell">
+								<div class="svg-sprite-icon">
+									<div class="svg-sprite-icon__top">
+										<div class="svg-sprite-icon__svg">
+											<svg viewBox="0 0 310 310" width="310" height="310">
+												<use xlink:href="<?php echo HTML::svgSymbol( 'youtube' ); ?>"></use>
+											</svg>
+
+										</div>
+									</div>
+									<div class="svg-sprite-icon__name" title="youtube">youtube</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="section ">
+			</div>
+		</div>
+
+		<div class="anchor scroll-up js-init" data-scroll-window="up">
+			<div class="anchor__icon"></div>
+		</div>
+
+		<?php /* @TODO Заменить на путь к файлу js переводам админки `Media/js-translations/${lang}.js` */ ?>
+		<script src="<?php echo HTML::media( '../_HTML/dist/hidden/js-translations/en.js', false, true ); ?>"></script>
+		<script>
+	window.wezomConfig = {
+		<?php /* @TODO Заменить Google Maps JavaScript API
+	https://developers.google.com/maps/documentation/javascript/get-api-key#key */ ?>
+		googleMapQueries: {
+			key: 'AIzaSyA0iD6g_lPIH2uMxwOwennIBu5q1qszd_s',
+			language: 'uk',
+			region: 'UA'
+		}
+	}
+</script>
+		<?php /* Основные скрипты страницы */ ?>
+		<script src="<?php echo HTML::media( 'assets/js/modernizr.js', false, true ); ?>"></script>
+		<script src="<?php echo HTML::media( 'assets/js/initialize.js', false, true ); ?>"></script>
+
+		<?php /* @TODO Определение старых браузеров */ ?>
+		<script>window.$wzmOld_URL_IMG = '<?php echo HTML::media( 'assets/css/static/pic/wezom-info-red.gif', false, true ); ?>';</script>
+		<script async defer src="<?php echo HTML::media( 'assets/js/static/wezom-old.min.js', false, true ); ?>"></script>
+
+		<?php /* Плашка с уведомлением об отключенном JavaScript */ ?>
+
+		<noscript>
+			<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/noscript.css', false, true ); ?>">
+			<div class="noscript-msg">
+				<input id="noscript-msg__input" class="noscript-msg__input" type="checkbox" title="Закрыть">
+				<div class="noscript-msg__container">
+					<label class="noscript-msg__close" for="noscript-msg__input">&times;</label>
+					<a class="noscript-msg__wezom-link" href="http://wezom.com.ua/" target="_blank" title="Агентство системных интернет-решений Wezom">&nbsp;</a>
+					<div class="noscript-msg__content">
+
+						<p>В Вашем браузере
+							<b>отключен JavaScript!</b> Для корректной работы с сайтом необходима поддержка Javascript.
+						</p>
+						<p>Мы рекомендуем Вам включить использование JavaScript в настройках вашего браузера.</p>
+					</div>
+				</div>
+			</div>
+		</noscript>
+
+		<div class="cookie is-hidden" data-cookie-info>
+			<div class="container">
+				<div class="grid grid--space-def _pt-def">
+					<div class="gcell _flex-grow">
+						<p class="cookie__content">
+							Этот сайт использует файлы cookie и похожие технологии, чтобы гарантировать максимальное удобство пользователям.
+							<br> При использовании данного сайта, вы подтверждаете свое согласие на использование файлов cookie в соответствии с настоящим уведомлением в отношении данного типа файлов
+							<br> Если вы не согласны с тем, чтобы мы использовали данный тип файлов, то вы должны соответствующим образом установить настройки вашего браузера или не использовать сайт TLtrans.
+						</p>
+					</div>
+					<div class="gcell _flex-noshrink">
+						<span class="button" data-cookie-submit>
+							<span>Согласен</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!---->
+
+	</body>
+</html>

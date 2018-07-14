@@ -1,0 +1,28 @@
+<%
+	/** Шаблон страницы типографии
+	 * @name ui-wysiwyg.ejs */
+
+	/** установка лейаута страницы */
+	app.setLayout('default-view.ejs');
+
+	/** расширение глобального объекта app
+	 * @see module:core */
+	app.require('core.js')(app);
+
+	// выгружаем инструменты
+	const {currentView, views} = app.data;
+
+	// хлебные крошки
+	const breadcrumbsList = [
+		views.index,
+		views.ui,
+		currentView
+	];
+%>
+<div class="section _pt-def">
+	<div class="container">
+		<div class="title title--size-h1"><%- currentView.title %></div>
+		<%- app.widget('breadcrumbs.ejs', {list: breadcrumbsList}) %>
+		<%- app.widget('wysiwyg/wysiwyg-example.ejs') %>
+	</div>
+</div>

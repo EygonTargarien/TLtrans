@@ -1,0 +1,488 @@
+<?php if (!defined('HOST')) { define('HOST', '../../'); } $hiddenFolder = 'hidden/'; require_once($hiddenFolder . 'HTML.php'); use Core\HTML;  if (!function_exists('__')) { require_once($hiddenFolder . 'i18n/I18n.php'); \I18n::lang('en'); } ?>
+<!doctype html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>UI Формы</title>
+		<meta name="description" lang="en" content="description">
+		<meta name="keywords" lang="en" content="keywords">
+
+		<?php /* @TODO мета тег, только для проекта верстки */ ?>
+		<meta name="robots" content="noindex, nofollow">
+
+		<?php /* Open Graph */ ?>
+		<meta property="og:title" content="UI Формы">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="wezom-starter-template-default">
+		<meta property="og:url" content="http://TLtrans/ui-forms">
+		<meta property="og:description" content="Краткий текст (новости, товара и т.д)">
+
+		<?php /* Touch */ ?>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+
+		<?php /* Viewport */ ?>
+
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+		<meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Your Website Title" />
+		<meta property="og:description" content="Your description" />
+		<meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
+
+		<?php /* Favicons */ ?>
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo HTML::media( 'assets/favicons/apple-touch-icon.png', false, true ); ?>">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo HTML::media( 'assets/favicons/favicon-32x32.png', false, true ); ?>">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo HTML::media( 'assets/favicons/favicon-16x16.png', false, true ); ?>">
+		<link rel="manifest" href="<?php echo HTML::media( 'assets/favicons/manifest.json', false, false ); ?>">
+		<link rel="mask-icon" href="<?php echo HTML::media( 'assets/favicons/safari-pinned-tab.svg', false, true ); ?>" color="#d01400">
+		<meta name="apple-mobile-web-app-title" content="Site name">
+		<meta name="application-name" content="Site name">
+		<meta name="msapplication-config" content="<?php echo HTML::media( 'assets/favicons/browserconfig.xml', false, true ); ?>">
+		<meta name="theme-color" content="#d01400">
+
+		<?php /* Основные стили страницы */ ?>
+		<style id="webpack-style-loader-insert-before-this"></style>
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/vendors-and-helpers.css', false, true ); ?>">
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/editor.css', false, true ); ?>">
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/style.css', false, true ); ?>">
+
+		<?php /* @TODO Общие критикал скрипты для всех страниц */ ?>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/static/critical/svg4everybody.js' ); ?>
+;(function(){document.addEventListener("DOMContentLoaded",function(){svg4everybody()})})();</script>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/critical/localstorage-test.js' ); ?></script>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/critical/localstorage-fonts.js' ); ?>
+;(function(window){window.loadFontsToLocalStorage('Fonts-WEZOM-STARTER-TEMPLATE-DEFAULT','<?php echo HTML::media( 'assets/css/static/fonts/b64-woff.css', false, true ); ?>','<?php echo HTML::media( 'assets/css/static/fonts/b64-woff2.css', false, true ); ?>');})(window);</script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="section section--mainScreen _flex-grow">
+
+				<div class="section _pt-def">
+					<div class="container">
+						<div class="title title--size-h1">UI Формы</div>
+
+						<div class="breadcrumbs">
+
+							<span>
+								<a href="index.html">Главная страница</a>
+							</span>
+
+							<span>
+								<a href="ui.html">UI Kit</a>
+							</span>
+
+							<span>
+								<a>UI Формы</a>
+							</span>
+
+						</div>
+
+						<div class="grid grid--1 grid--md-2 grid--space-def">
+							<div class="gcell">
+
+								<div class="demo">
+									<div class="title title--size-h3">Заполненая форма</div>
+									<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+										<div class="form-group">
+											<input class="form-group__input" type="text" required="" value="input value" placeholder="placeholder" name="send">
+
+										</div>
+
+										<div class="form-group">
+											<button class="button" type="submit">
+												<span>Отправить</span>
+											</button>
+
+											<button class="button" type="reset">
+												<span>Сбросить</span>
+											</button>
+
+										</div>
+									</form>
+								</div>
+
+								<div class="demo">
+									<div class="title title--size-h3">equalTo</div>
+									<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+										<div class="form-group">
+											<label class="form-group__label" for="password-in">Новый пароль</label>
+											<input class="form-group__input" type="password" required="" placeholder="password" id="password-in" name="password-in">
+
+										</div>
+
+										<div class="form-group">
+											<label class="form-group__label" for="password-equal">Повторите пароль</label>
+											<input class="form-group__input" type="password" required="" placeholder="password" id="password-equal" name="password-equal" data-rule-equalto='[name="password-in"]'>
+
+										</div>
+
+										<div class="form-group">
+											<button class="button" type="submit">
+												<span>Отправить</span>
+											</button>
+
+											<button class="button" type="reset">
+												<span>Сбросить</span>
+											</button>
+
+										</div>
+									</form>
+								</div>
+
+								<div class="demo">
+									<div class="title title--size-h3">Числа</div>
+									<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+										<div class="form-group">
+											<input class="form-group__input" type="number" required="" placeholder="number" name="number" data-rule-number="true">
+
+										</div>
+
+										<div class="form-group">
+											<input class="form-group__input" type="number" required="" placeholder="digits" name="digits" data-rule-digits="true">
+
+										</div>
+
+										<div class="form-group">
+											<button class="button" type="submit">
+												<span>Отправить</span>
+											</button>
+
+											<button class="button" type="reset">
+												<span>Сбросить</span>
+											</button>
+
+										</div>
+									</form>
+								</div>
+
+								<div class="demo">
+									<div class="title title--size-h3">Message</div>
+									<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+										<div class="form-group">
+											<input class="form-group__input" type="email" required="" placeholder="email" name="email">
+
+										</div>
+
+										<div class="form-group">
+											<textarea class="form-group__textarea" required="" placeholder="message" name="message" data-rule-minlength="20"></textarea>
+
+										</div>
+
+										<div class="form-group">
+											<button class="button" type="submit">
+												<span>Отправить</span>
+											</button>
+
+											<button class="button" type="reset">
+												<span>Сбросить</span>
+											</button>
+
+										</div>
+									</form>
+								</div>
+
+							</div>
+							<div class="gcell">
+
+								<div class="demo">
+									<div class="title title--size-h3">Числа</div>
+									<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+										<div class="form-group">
+											<input class="form-group__input js-init" type="tel" required="" data-phonemask="universal" data-rule-minlength="3" data-rule-validdata="true" data-msg-validdata="Укажите полный номер телефона" value="+380" placeholder="phone mask" name="phone-mask">
+
+										</div>
+
+										<div class="form-group">
+											<button class="button" type="submit">
+												<span>Отправить</span>
+											</button>
+
+											<button class="button" type="reset">
+												<span>Сбросить</span>
+											</button>
+
+										</div>
+									</form>
+								</div>
+
+								<div class="demo">
+									<div class="title title--size-h3">Select</div>
+									<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+										<div class="form-group">
+											<select class="form-group__select" required="" name="select">
+												<option selected="" disabled="">Select</option>
+												<option value="01">item 01</option>
+												<option value="02">item 02</option>
+												<option value="03">item 03</option>
+												<option value="04">item 04</option>
+												<option value="05">item 05</option>
+											</select>
+
+										</div>
+
+										<div class="form-group">
+											<select class="form-group__select s2s js-init" required="" name="select-2" data-s2s='{"minimumResultsForSearch":10}'>
+												<option selected="" disabled="">Select single option</option>
+												<option value="01">item 01</option>
+												<option value="02">item 02</option>
+												<option value="03">item 03</option>
+												<option value="04">item 04</option>
+												<option value="05">item 05</option>
+											</select>
+
+											<label class="has-error" for="select-2" id="select-2-error" style="display: none;"></label>
+
+										</div>
+
+										<div class="form-group">
+											<select class="form-group__select s2s js-init" required="" name="select-2-multiple" multiple="" data-s2s='{"minimumResultsForSearch":10}'>
+												<option selected="" disabled="">Select multiple options</option>
+												<option value="01">item 01</option>
+												<option value="02">item 02</option>
+												<option value="03">item 03</option>
+												<option value="04">item 04</option>
+												<option value="05">item 05</option>
+											</select>
+
+											<label class="has-error" for="select-2-multiple" id="select-2-multiple-error" style="display: none;"></label>
+
+										</div>
+
+										<div class="form-group">
+											<button class="button" type="submit">
+												<span>SEND</span>
+											</button>
+
+											<button class="button" type="reset">
+												<span>Reset</span>
+											</button>
+
+										</div>
+									</form>
+								</div>
+
+								<div class="demo">
+									<div class="title title--size-h3">Check</div>
+									<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+										<div class="form-group">
+											<label class="form-check">
+												<input type="checkbox" required="" name="checkbox" value="1">
+
+												<span>checkbox 1</span>
+											</label>
+
+											<label class="form-check">
+												<input type="checkbox" required="" name="checkbox" value="2">
+
+												<span>checkbox 2</span>
+											</label>
+
+											<div>
+												<label class="has-error" for="checkbox" id="checkbox-error" style="display: none;"></label>
+
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="form-check">
+												<input type="radio" required="" name="radio" value="1">
+
+												<span>radio 1</span>
+											</label>
+
+											<label class="form-check">
+												<input type="radio" required="" name="radio" value="2">
+
+												<span>radio 2</span>
+											</label>
+
+											<div>
+												<label class="has-error" for="radio" id="radio-error" style="display: none;"></label>
+
+											</div>
+										</div>
+
+										<div class="form-group">
+											<button class="button" type="submit">
+												<span>Отправить</span>
+											</button>
+
+											<button class="button" type="reset">
+												<span>Сбросить</span>
+											</button>
+
+										</div>
+									</form>
+								</div>
+
+								<div class="demo">
+									<div class="title title--size-h3">Remote</div>
+									<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+										<div class="form-group">
+											<input class="form-group__input" type="email" required="" name="email" value="demo@site.com" data-rule-remote="./hidden/response/email.php">
+
+										</div>
+
+										<div class="form-group">
+											<button class="button" type="submit">
+												<span>Отправить</span>
+											</button>
+
+											<button class="button" type="reset">
+												<span>Сбросить</span>
+											</button>
+
+										</div>
+									</form>
+								</div>
+
+								<div class="demo">
+									<div class="title title--size-h3">Примеры ошибок отправки</div>
+									<form class="form _mb-def js-init" method="post" data-ajax="./hidden/response/dem324234o.json">
+										<div class="grid grid--hspace-def">
+											<div class="gcell _flex-grow">
+												<div class="form-group">
+													<input class="form-group__input" type="text" required="" value="not found" name="error">
+
+												</div>
+											</div>
+											<div class="gcell">
+												<div class="form-group">
+													<button class="button" type="submit">
+														<span>Отправить</span>
+													</button>
+
+												</div>
+											</div>
+										</div>
+									</form>
+
+									<form class="form _mb-def js-init" method="post" data-ajax="./hidden/response/error.json">
+										<div class="grid grid--hspace-def">
+											<div class="gcell _flex-grow">
+												<div class="form-group">
+													<input class="form-group__input" type="text" required="" value="error from server" name="error">
+
+												</div>
+											</div>
+											<div class="gcell">
+												<div class="form-group">
+													<button class="button" type="submit">
+														<span>Отправить</span>
+													</button>
+
+												</div>
+											</div>
+										</div>
+									</form>
+
+									<form id="error-throw-form" class="form _mb-def js-init" method="post" data-ajax="./hidden/response/error.json">
+										<div class="grid grid--hspace-def">
+											<div class="gcell _flex-grow">
+												<div class="form-group">
+													<input class="form-group__input" type="text" required="" value="throw error" name="error">
+
+												</div>
+											</div>
+											<div class="gcell">
+												<div class="form-group">
+													<button class="button" type="submit">
+														<span>Отправить</span>
+													</button>
+
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="section ">
+			</div>
+		</div>
+
+		<div class="anchor scroll-up js-init" data-scroll-window="up">
+			<div class="anchor__icon"></div>
+		</div>
+
+		<?php /* @TODO Заменить на путь к файлу js переводам админки `Media/js-translations/${lang}.js` */ ?>
+		<script src="<?php echo HTML::media( '../_HTML/dist/hidden/js-translations/en.js', false, true ); ?>"></script>
+		<script>
+	window.wezomConfig = {
+		<?php /* @TODO Заменить Google Maps JavaScript API
+	https://developers.google.com/maps/documentation/javascript/get-api-key#key */ ?>
+		googleMapQueries: {
+			key: 'AIzaSyA0iD6g_lPIH2uMxwOwennIBu5q1qszd_s',
+			language: 'uk',
+			region: 'UA'
+		}
+	}
+</script>
+		<?php /* Основные скрипты страницы */ ?>
+		<script src="<?php echo HTML::media( 'assets/js/modernizr.js', false, true ); ?>"></script>
+		<script src="<?php echo HTML::media( 'assets/js/initialize.js', false, true ); ?>"></script>
+
+		<?php /* @TODO Определение старых браузеров */ ?>
+		<script>window.$wzmOld_URL_IMG = '<?php echo HTML::media( 'assets/css/static/pic/wezom-info-red.gif', false, true ); ?>';</script>
+		<script async defer src="<?php echo HTML::media( 'assets/js/static/wezom-old.min.js', false, true ); ?>"></script>
+
+		<?php /* Плашка с уведомлением об отключенном JavaScript */ ?>
+
+		<noscript>
+			<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/noscript.css', false, true ); ?>">
+			<div class="noscript-msg">
+				<input id="noscript-msg__input" class="noscript-msg__input" type="checkbox" title="Закрыть">
+				<div class="noscript-msg__container">
+					<label class="noscript-msg__close" for="noscript-msg__input">&times;</label>
+					<a class="noscript-msg__wezom-link" href="http://wezom.com.ua/" target="_blank" title="Агентство системных интернет-решений Wezom">&nbsp;</a>
+					<div class="noscript-msg__content">
+
+						<p>В Вашем браузере
+							<b>отключен JavaScript!</b> Для корректной работы с сайтом необходима поддержка Javascript.
+						</p>
+						<p>Мы рекомендуем Вам включить использование JavaScript в настройках вашего браузера.</p>
+					</div>
+				</div>
+			</div>
+		</noscript>
+
+		<div class="cookie is-hidden" data-cookie-info>
+			<div class="container">
+				<div class="grid grid--space-def _pt-def">
+					<div class="gcell _flex-grow">
+						<p class="cookie__content">
+							Этот сайт использует файлы cookie и похожие технологии, чтобы гарантировать максимальное удобство пользователям.
+							<br> При использовании данного сайта, вы подтверждаете свое согласие на использование файлов cookie в соответствии с настоящим уведомлением в отношении данного типа файлов
+							<br> Если вы не согласны с тем, чтобы мы использовали данный тип файлов, то вы должны соответствующим образом установить настройки вашего браузера или не использовать сайт TLtrans.
+						</p>
+					</div>
+					<div class="gcell _flex-noshrink">
+						<span class="button" data-cookie-submit>
+							<span>Согласен</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!---->
+
+	</body>
+</html>

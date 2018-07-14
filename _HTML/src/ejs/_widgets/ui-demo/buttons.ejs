@@ -1,0 +1,12 @@
+<%
+	/** примеры кнопок
+	 * @name ui-demo/buttons */
+
+	// Выгружаем инструменты
+	const {Button} = app.el;
+%>
+<%- new Button({innerHTML: 'Span'}, 'span') %>
+<%- new Button({innerHTML: 'Link', href: '#'}, 'a') %>
+<%- new Button({innerHTML: 'Button'}) %>
+<%- new Button({innerHTML: 'Div'}, 'div') %>
+<%- new Button({innerHTML: 'Custom', class:['button-new','tst']}, 'div') %>

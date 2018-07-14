@@ -1,0 +1,359 @@
+<%
+/** Превьвер для тестового сайта
+ * @name default/preview.ejs */
+
+        // выгружаем инструменты
+const {currentView, views} = app.data;
+const {comment, media} = app.module;
+
+var length = 0;
+for (var key in views) {
+    length++;
+}
+%>
+<%- comment.todoPhp('Превьювер только для верстки, на сайте его не подключать!') %>
+<style>
+	.previewer.is-builded {
+		display: block !important;
+		position: fixed;
+		z-index: 99999;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 80%;
+		min-width: 200px;
+		max-width: 440px;
+		margin-left: auto;
+		background-color: rgba(35, 49, 64, 0.98);
+		color: #fff;
+		font-size: 14px;
+		line-height: 1.2;
+		font-weight: 400;
+		font-style: normal;
+		font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+		letter-spacing: 0;
+		text-transform: none;
+		text-decoration: none;
+		padding: 1em 1.3em;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		opacity: 0;
+		-webkit-transform: translateX(-100%);
+		transform: translateX(-100%);
+		-webkit-transition: opacity .3s ease-in, -webkit-transform .25s ease-in .15s;
+		transition: opacity .3s ease-in, -webkit-transform .25s ease-in .15s;
+		transition: transform .25s ease-in .15s, opacity .3s ease-in;
+		transition: transform .25s ease-in .15s, opacity .3s ease-in, -webkit-transform .25s ease-in .15s; }
+
+	.previewer.is-builded * {
+		-webkit-box-sizing: inherit;
+		box-sizing: inherit; }
+
+	.previewer.is-builded ~ .previewer__nav {
+		display: block; }
+
+	.previewer.is-builded.previewer__side-right {
+		left: auto;
+		right: 0;
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%); }
+
+	.previewer.is-builded.previewer__side-right ~ .previewer__nav {
+		left: auto;
+		right: 15px; }
+
+	.previewer.is-active {
+		opacity: 1;
+		-webkit-transform: none !important;
+		transform: none !important;
+		-webkit-transition: opacity .3s ease-out .1s, -webkit-transform .4s ease-out;
+		transition: opacity .3s ease-out .1s, -webkit-transform .4s ease-out;
+		transition: transform .4s ease-out, opacity .3s ease-out .1s;
+		transition: transform .4s ease-out, opacity .3s ease-out .1s, -webkit-transform .4s ease-out; }
+
+	.previewer.is-active ~ .previewer__overlay {
+		display: block; }
+
+	.previewer__overlay {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 9998;
+		cursor: pointer; }
+
+	.previewer__nav {
+		display: none;
+		position: fixed;
+		bottom: 15px;
+		left: 15px;
+		z-index: 99998;
+		white-space: nowrap;
+		background-color: #f8f9f9;
+		-webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4); }
+
+	.previewer__nav:after {
+		content: '';
+		display: block;
+		height: 0;
+		clear: both; }
+
+	.previewer__link {
+		float: left;
+		display: block;
+		width: 42px;
+		height: 42px;
+		text-align: center;
+		cursor: pointer;
+		-webkit-transition: background-color .2s ease;
+		transition: background-color .2s ease; }
+
+	.previewer__link:hover {
+		background-color: rgba(0, 0, 0, 0.1); }
+
+	.previewer__link svg {
+		pointer-events: none;
+		-webkit-transition: fill .2s ease;
+		transition: fill .2s ease; }
+
+	.previewer__open {
+		fill: #13ce66; }
+
+	.previewer__open:hover {
+		fill: #0d8843; }
+
+	.previewer__home {
+		fill: #ffc82c; }
+
+	.previewer__home:hover {
+		fill: #dfa500; }
+
+	.previewer__next, .previewer__prev {
+		fill: #1fb6ff; }
+
+	.previewer__next:hover, .previewer__prev:hover {
+		fill: #008dd2; }
+
+	.previewer__closeMenu {
+		font-size: 38px;
+		line-height: 42px;
+		font-family: serif;
+		color: red; }
+
+	.previewer__closeMenu:hover {
+		color: #b30000; }
+
+	.previewer__header {
+		position: relative;
+		padding: 0 60px .6em 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+
+	.previewer__close {
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 40px;
+		height: 40px;
+		font-family: serif;
+		line-height: 38px;
+		font-size: 40px;
+		text-align: center;
+		background-color: #1b2837;
+		border: 1px solid transparent;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none; }
+
+	.previewer__close:hover {
+		background-color: #000; }
+
+	.previewer__title {
+		font-weight: 700;
+		font-size: 1.25em;
+		padding-bottom: .2em;
+		text-overflow: ellipsis;
+		max-width: 100%;
+		white-space: nowrap;
+		overflow: hidden; }
+
+	.previewer__pages {
+		color: #ccc;
+		font-size: 13px;
+		font-style: italic;
+		padding-bottom: .4em; }
+
+	.previewer__container {
+		position: absolute;
+		top: 80px;
+		bottom: 1em;
+		left: 0;
+		right: 0; }
+
+	.previewer__list {
+		max-height: 100%;
+		overflow: auto; }
+
+	.previewer__list:after {
+		content: '';
+		display: block;
+		clear: both;
+		height: 0; }
+
+	.previewer__item {
+		display: block;
+		cursor: pointer;
+		position: relative;
+		-webkit-transition: box-shadow .2s ease;
+		-webkit-transition: -webkit-box-shadow .2s ease;
+		transition: -webkit-box-shadow .2s ease;
+		transition: box-shadow .2s ease;
+		transition: box-shadow .2s ease, -webkit-box-shadow .2s ease;
+		padding: 0 1.3em;
+		-webkit-transition: background-color .2s ease;
+		transition: background-color .2s ease;
+		color: #fff !important;
+		text-decoration: none !important;
+		font-weight: 400; }
+
+	.previewer__item.is-active, .previewer__item:hover {
+		background-color: rgba(0, 0, 0, 0.3); }
+
+	.previewer__block {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		padding: 1em 0; }
+
+	.previewer__alias {
+		font-size: 13px;
+		font-style: italic;
+		padding-top: .3em;
+		opacity: .5; }
+
+	@media only screen and (min-width: 541px) {
+		.previewer.is-builded {
+			font-size: 16px;
+			padding: 1.3em 1.7em; }
+		.previewer__container {
+			top: 100px;
+			bottom: 1.3em; }
+		.previewer__item {
+			padding: 0 1.7em; } }
+</style>
+<nav>
+    <div id="previewer" class="previewer" style="display: none;">
+        <div class="previewer__header">
+            <div id="previewer__close" class="previewer__close" title="Закрыть список страниц">&times;</div>
+            <div id="previewer__title" class="previewer__title">
+                <%- currentView.title; %>
+            </div>
+            <div class="previewer__pages">
+                страниц - <span id="previewer__count"><%- length %></span>
+            </div>
+        </div>
+        <div class="previewer__container">
+            <div id="previewer__list" class="previewer__list">
+                <% for (var key in views) { %>
+                <a href="<%- views[key].href %>" class="previewer__item <% if (views[key].href == currentView.href) { %>is-active<% } %>">
+                    <div class="previewer__block">
+                        <div class="previewer__name"><%- views[key].title %></div>
+                        <div class="previewer__alias">/<%- views[key].href %></div>
+                    </div>
+                </a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div id="previewer__nav" class="previewer__nav">
+			<span id="previewer__open" class="previewer__link previewer__open" title="Открыть список страниц">
+				<svg xmlns="http://www.w3.org/2000/svg" width="30" height="42" viewBox="0 0 30 42"><path d="M14 18c0 1.1-.9 2-2 2h-3c-1.1 0-2-.9-2-2v-3c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2v3zM23 18c0 1.1-.9 2-2 2h-3c-1.1 0-2-.9-2-2v-3c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2v3zM23 27c0 1.1-.9 2-2 2h-3c-1.1 0-2-.9-2-2v-3c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2v3zM14 27c0 1.1-.9 2-2 2h-3c-1.1 0-2-.9-2-2v-3c0-1.1.9-2 2-2h3c1.1 0 2 .9 2 2v3z"></path></svg>
+			</span>
+        <a href="<%- views['index'].href; %>" id="previewer__home" class="previewer__link previewer__home" title="Перейти на главную страницу">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="42" viewBox="0 0 30 42"><path d="M23.6 19.9c.5.5.5 1.2.1 1.7-.2.2-.5.3-.8.3-.3 0-.5-.1-.8-.3l-7.1-6.8-7.1 6.9c-.5.5-1.2.4-1.6-.1-.4-.5-.4-1.2.1-1.6l7.1-6.9c.8-.8 2.2-.8 3 0l7.1 6.8zm-8.6-3.2l5.6 5.2v6.4c0 .6-.5 1.2-1.1 1.2h-2.8v-4.6h-3.4v4.6h-2.8c-.6 0-1.1-.5-1.1-1.2v-6.4l5.6-5.2z"></path></svg>
+        </a>
+        <span id="previewer__prev" class="previewer__link previewer__prev" title="Предыдущая страница">
+				<svg xmlns="http://www.w3.org/2000/svg" width="30" height="42" viewBox="6 0 30 42"><path d="M25.1 28.5c-.2.3-.6.5-1 .5s-.7-.1-.9-.4l-5.7-5.7c-1.1-1.1-1.1-2.7 0-3.8l5.7-5.7c.5-.5 1.2-.6 1.7-.2.7.5.7 1.5.2 2l-5.8 5.8 5.7 5.7c.5.5.5 1.3.1 1.8z"></path></svg>
+			</span>
+        <span id="previewer__next" class="previewer__link previewer__next" title="Следующая страница">
+				<svg xmlns="http://www.w3.org/2000/svg" width="30" height="42" viewBox="0 0 30 42"><path d="M10.9 28.5c-.5-.5-.4-1.3.1-1.9l5.7-5.7-5.7-5.7c-.5-.5-.5-1.5.2-2 .5-.4 1.2-.3 1.7.2l5.7 5.7c1.1 1.1 1.1 2.7 0 3.8l-5.7 5.7c-.3.3-.6.4-.9.4-.5 0-.8-.2-1.1-.5z"></path></svg>
+			</span>
+        <span id="previewer__closeMenu" class="previewer__link previewer__closeMenu" title="Закрыть меню">&times;</span>
+    </div>
+    <div id="previewer__overlay" class="previewer__overlay"></div>
+</nav>
+<script>
+	(function(window, $) {
+
+		if ($ === undefined) {
+			return false;
+		}
+		var $iPreviewer = $('#previewer');
+		var $iPreviewerOverlay = $('#previewer__overlay');
+		var $iPreviewerOpen = $('#previewer__open');
+		var $iPreviewerPrev = $('#previewer__prev');
+		var $iPreviewerNext = $('#previewer__next');
+		var $iPreviewerNav = $('#previewer__nav');
+		var $iPreviewerCloseMenu = $('#previewer__closeMenu');
+
+		function closeMenu() {
+			$iPreviewerNav.css('display', 'none');
+		}
+
+		function close() {
+			$iPreviewer.removeClass('is-active');
+		}
+
+		function open() {
+			$iPreviewer.addClass('is-active');
+		}
+
+		function show() {
+			$iPreviewer.addClass('is-builded');
+		}
+
+		function sibling(goTo) {
+			var $iPreviewerActivePage = $('.previewer__item.is-active');
+			var $iPreviewerNewPage = $iPreviewerActivePage[goTo]();
+			if (!$iPreviewerNewPage.length) {
+				var orderIndex = 'first';
+				if (goTo == 'prev') {
+					orderIndex = 'last';
+				}
+				$iPreviewerNewPage = $('.previewer__item')[orderIndex]();
+			}
+			$iPreviewerNewPage[0].click();
+		}
+
+		$iPreviewer.on('click', '.previewer__close', function(event) {
+			close();
+		});
+
+		$iPreviewerOverlay.on('click', function(event) {
+			close();
+		});
+
+		$iPreviewerCloseMenu.on('click', function(event) {
+			closeMenu();
+		});
+
+		$iPreviewerOpen.on('click', function(event) {
+			open();
+		});
+
+		setTimeout(function() {
+			show();
+
+			$iPreviewerPrev.on('click', function(event) {
+				sibling('prev');
+			});
+
+			$iPreviewerNext.on('click', function(event) {
+				sibling('next');
+			});
+		}, 500);
+
+	})(window, window.jQuery);
+</script>

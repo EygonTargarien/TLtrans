@@ -1,0 +1,67 @@
+////
+/// @group _blocks/
+////
+
+/// Description
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 1rem 0;
+
+	&__number {
+		font-size: 1rem;
+		min-width: 1.6rem;
+		line-height: 1.6rem;
+		display: inline-block;
+		vertical-align: top;
+		order: 2;
+		margin: 2px;
+
+		&[href] {
+			color: map-get($colors-link, default);
+
+			&:hover {
+				color: map-get($colors-link, hover);
+				background-color: #eee;
+			}
+
+			&:active {
+				color: map-get($colors-link, active);
+			}
+		}
+	}
+
+	&__arrow {
+		text-decoration: none;
+		width: 2rem;
+		line-height: 2rem;
+		border-radius: 50%;
+		border: 1px solid;
+		color: map-get($colors-link, default);
+
+		&:hover {
+			color: map-get($colors-link, hover);
+			background-color: #eee;
+		}
+
+		&:active {
+			color: map-get($colors-link, active);
+		}
+
+		&:not([href]) {
+			color: inherit;
+			pointer-events: none;
+			opacity: .3;
+		}
+
+		&--prev {
+			order: 1;
+		}
+
+		&--next {
+			order: 3;
+		}
+	}
+}

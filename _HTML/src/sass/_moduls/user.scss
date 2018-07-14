@@ -1,0 +1,102 @@
+.user{
+	padding: 10px 0;
+	display: none;
+	&__info{
+		border-radius: 10px;
+		padding: 20px;
+		background: #fff;
+		position: sticky;
+		top: 20px;
+		margin-bottom: 30px;
+	}
+
+	&__repo{
+		border-radius: 10px;
+		padding: 20px;
+		background: #fff;
+		&-list{
+
+		}
+		&-item{
+			cursor: pointer;
+			padding: 5px 10px;
+			border-bottom: 1px dotted map_get($colors, text);
+			transition: all 0.3s;
+			&:last-child{
+				border-bottom: none;
+			}
+			&:hover{
+				color: map-get($colors,alt);
+				padding-left: 20px;
+			}
+		}
+		&-empty{
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 20px;
+		}
+	}
+	&__title{
+		text-transform: uppercase;
+		text-align: center;
+		font-family: map-get($font-family,alt);
+		border-bottom: 2px solid map_get($colors, text);
+		margin-bottom: 20px;
+	}
+
+	&__cart{
+		display: flex;
+		flex-wrap: wrap;
+
+	}
+	&__img{
+		width: 40%;
+		padding-right: 10px;
+	}
+	&__cnt{
+		width: 60%;
+		padding-left: 5px;
+		font-family: map-get($font-family,alt);
+	}
+
+	&__head{
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+		border-bottom: 1px solid map_get($colors, border);
+	}
+	&__login{
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 1.1;
+	}
+	&__date{
+		color: map-get($colors,text2);
+		font-size: 14px;
+	}
+
+	&__repoLink{
+		color: map-get($colors,text);
+		transition: all 0.3s;
+		&:hover{
+			color: map-get($colors,alt);
+		}
+	}
+	&__folowCount{
+		font-family: map-get($font-family,alt);
+		font-size: 13px;
+		display: flex;
+		align-items: center;
+		span{
+			background: map_get($colors, border);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 15px;
+			height: 15px;
+			font-size: 12px;
+			margin-left: 5px;
+		}
+	}
+
+}

@@ -1,0 +1,55 @@
+////
+/// @group _blocks/
+////
+
+/// Description
+.draggable-table {
+	position: relative;
+	overflow: hidden;
+
+	// sass-lint:disable no-important
+	&__holder {
+		overflow: hidden !important;
+		cursor: initial !important;
+		user-select: initial !important;
+
+		.draggable-table--left &,
+		.draggable-table--right & {
+			cursor: move !important;
+		}
+
+		.touchevents & {
+			touch-action: unset !important;
+		}
+	}
+	// sass-lint:enable no-important
+
+	&::before,
+	&::after {
+		$t: map-get($transitions, normal);
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: rem(24px);
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity $t;
+		z-index: 99;
+	}
+
+	&::before {
+		right: 100%;
+		box-shadow: 10px 0 8px -6px map-get($colors, dark);
+	}
+
+	&::after {
+		left: 100%;
+		box-shadow: -10px 0 8px -6px map-get($colors, dark);
+	}
+
+	&--left::before,
+	&--right::after {
+		opacity: .3;
+	}
+}

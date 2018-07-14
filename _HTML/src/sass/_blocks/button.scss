@@ -1,0 +1,91 @@
+////
+/// @group _blocks/
+////
+
+/// Description
+.button {
+	vertical-align: top;
+	height: 40px;
+	padding: 0 34px;
+	border-radius: map-get($sizes, border-radius);
+	box-sizing: border-box;
+	line-height: normal;
+	cursor: pointer;
+	margin: 0 3px 5px 0;
+	background: #fff;
+	font-family: map-get($font-family,alt);
+	text-transform: uppercase;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid map_get($colors,text);
+	transition: all 0.3s;
+	min-width: 180px;
+	box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+	&:before{
+		content: '';
+		position: absolute;
+		transition: all 0.3s;
+		width: 100%;
+		height: 0;
+		top: 50%;
+		left: 50%;
+		background: map_get($colors, alt);
+		opacity: 0;
+		transform: translateX(-50%) translateY(-50%) rotate(45deg)
+	}
+	&:hover{
+		background: transparent;
+		box-shadow: initial;
+		border: 1px solid transparent;
+		&:before{
+			height: 260%;
+			opacity: 1;
+		}
+		span{
+			color: #fff;
+		}
+	}
+	&:focus{
+		outline: none;
+	}
+	&--full-width {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	&:only-child {
+		margin: 0;
+	}
+
+
+	&:active {
+		top: 2px;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: .6;
+	}
+
+	&.is-active {
+		cursor: default;
+		background-color: map-get($colors, bg);
+	}
+	span{
+		display: inline-block;
+		transition: all 0.3s;
+		position: relative;
+		white-space: nowrap;
+	}
+	&__wrap{
+		&--center{
+			display: flex;
+			justify-content: center;
+		}
+	}
+}

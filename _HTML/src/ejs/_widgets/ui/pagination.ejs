@@ -1,0 +1,24 @@
+<%
+	/**
+	 * @name ui/pagination.ejs */
+
+	// Выгружаем инструменты
+	const {comment} = app.module;
+
+	const {
+		href = '#'
+	} = app.entry;
+%>
+<div class="pagination">
+	<a class="pagination__number" href="<%- href %>">1</a>
+	<%- comment.todoPhp('Текущей странице не добавлять атрибут `href`') %>
+	<a class="pagination__number pagination__number--current">2</a>
+	<a class="pagination__number" href="<%- href %>">3</a>
+	<a class="pagination__number" href="<%- href %>">4</a>
+	<a class="pagination__number" href="<%- href %>">...</a>
+	<a class="pagination__number" href="<%- href %>">48</a>
+
+	<%- comment.todoPhp('Если страница первая или последняя - не добавлять атрибут `href`, соответствующей стрелке') %>
+	<a class="pagination__arrow pagination__arrow--prev">&lArr;</a>
+	<a class="pagination__arrow pagination__arrow--next" href="<%- href %>">&rArr;</a>
+</div>

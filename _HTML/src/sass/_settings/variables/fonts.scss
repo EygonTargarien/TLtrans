@@ -1,0 +1,15 @@
+////
+/// @group _settings/
+////
+
+
+/// Карта Шрифтов
+/// @type {Map}
+$font-family: (
+	main: #{'Bitter', sans-serif},
+	alt: #{'DINCond',sans-serif},
+
+
+	secondary: #{sans-serif},
+	monospace: #{Consolas, "Liberation Mono", Menlo, Courier, monospace}
+);

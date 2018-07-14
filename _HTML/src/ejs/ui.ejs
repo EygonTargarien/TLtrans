@@ -1,0 +1,168 @@
+<%
+	/** Шаблон страницы UI Kit
+	 * @name ui.ejs */
+
+	/** установка лейаута страницы */
+	app.setLayout('default-view.ejs');
+
+	/** расширение глобального объекта app
+	 * @see module:core */
+	app.require('core.js')(app);
+
+	// выгружаем инструменты
+	const {currentView, views} = app.data;
+
+	// хлебные крошки
+	const breadcrumbsList = [
+		views.index,
+		currentView
+	];
+
+	/**
+	 * @param {string} anchor
+	 * @param {string} [title=anchor]
+	 */
+	function _title (anchor, title = anchor) {
+		return `
+		<div class="title title--size-h3 demo-title">
+			<span>${title}</span>
+			<a href="#${anchor}" title="Установить якорь">#</a>
+			<a href="#top" title="Наверх">&uuarr;</a>
+		</div>`;
+	}
+%>
+<style>
+	.demo-nav {
+		counter-reset: demo-nav;
+	}
+	.demo-nav a::before {
+		counter-increment: demo-nav;
+		content: counter(demo-nav) '. ';
+	}
+
+	.wrapper {
+		counter-reset: demo-title;
+	}
+	.demo-title::before {
+		counter-increment: demo-title;
+		content: counter(demo-title) '. ';
+	}
+</style>
+<div id="top" class="section _pt-def">
+	<div class="container">
+		<div class="title title--size-h1"><%- currentView.title %></div>
+		<%- app.widget('breadcrumbs.ejs', {list: breadcrumbsList}) %>
+
+		<div class="title title--size-h3">Карта сайта</div>
+		<%- app.widget('sitemap-list.ejs') %>
+
+		<div class="wysiwyg">
+			<p>Список блоков:</p>
+			<div class="grid grid--auto grid--space-def demo-nav">
+				<div><a href="#anchor-title">title</a></div>
+				<div><a href="#anchor-lozad">lozad</a></div>
+				<div><a href="#anchor-buttons">buttons</a></div>
+				<div><a href="#anchor-scroll-window">scroll-window</a></div>
+				<div><a href="#anchor-magnific-popup">magnific-popup</a></div>
+				<div><a href="#anchor-colors">colors</a></div>
+				<div><a href="#anchor-wstabs">wstabs</a></div>
+				<div><a href="#anchor-accordion">accordion</a></div>
+				<div><a href="#anchor-pagination">pagination</a></div>
+				<div><a href="#anchor-google-map">google-map</a></div>
+			</div>
+		</div>
+		<hr>
+	</div>
+</div>
+
+<div class="section _ptb-lg" id="anchor-title">
+	<div class="container">
+		<%- _title('anchor-title', 'title') %>
+		<%- app.widget('ui-demo/title.ejs') %>
+		<hr>
+	</div>
+</div>
+
+<div class="section _ptb-lg" id="anchor-buttons">
+	<div class="container">
+		<%- _title('anchor-buttons', 'buttons') %>
+		<%- app.widget('ui-demo/buttons.ejs') %>
+		<hr>
+	</div>
+</div>
+
+<div class="section _ptb-lg" id="anchor-lozad">
+	<div class="container">
+		<%- _title('anchor-lozad', 'lozad') %>
+		<%- app.widget('ui-demo/lozad.ejs') %>
+		<hr>
+	</div>
+</div>
+
+
+<div class="section _ptb-lg" id="anchor-scroll-window">
+	<div class="container">
+		<%- _title('anchor-scroll-window', 'scroll-window') %>
+		<%- app.widget('ui-demo/scroll-window.ejs') %>
+		<hr>
+	</div>
+</div>
+
+<div class="section _ptb-lg" id="anchor-magnific-popup">
+	<div class="container">
+		<%- _title('anchor-magnific-popup', 'magnific popup') %>
+		<%- app.widget('ui-demo/magnific-popup.ejs') %>
+		<hr>
+	</div>
+</div>
+
+<div class="section _ptb-lg" id="anchor-colors">
+	<div class="container">
+		<%- _title('anchor-colors', 'colors') %>
+		<%- app.widget('ui-demo/colors.ejs') %>
+		<hr>
+	</div>
+</div>
+
+<div class="section _ptb-lg" id="anchor-wstabs">
+	<div class="container">
+		<%- _title('anchor-wstabs', 'wstabs') %>
+		<%- app.widget('ui-demo/wstabs.ejs') %>
+		<hr>
+	</div>
+</div>
+
+<div class="section _ptb-lg" id="anchor-accordion">
+	<div class="container">
+		<%- _title('anchor-accordion', 'accordion') %>
+		<div class="grid grid--1 grid--md-2 grid--space-def">
+			<div class="gcell">
+				<div class="title title--size-h4">single</div>
+				<%- app.widget('ui/accordion.ejs', {ns: 'accordion-example-single', openActive: false}) %>
+			</div>
+			<div class="gcell">
+				<div class="title title--size-h4">multiple</div>
+				<%- app.widget('ui/accordion.ejs', {ns: 'accordion-example-multiple', type: 'multiple', openActive: false}) %>
+			</div>
+		</div>
+		<hr>
+	</div>
+</div>
+
+<div class="section _ptb-lg" id="anchor-pagination">
+	<div class="container">
+		<%- _title('anchor-pagination', 'pagination') %>
+		<%- app.widget('ui/pagination.ejs') %>
+		<hr>
+	</div>
+</div>
+
+
+
+<div class="section _ptb-lg" id="anchor-google-map">
+	<div class="container">
+		<%- _title('anchor-google-map', 'google-map') %>
+		<%- app.widget('ui/google-map.ejs') %>
+		<hr>
+	</div>
+</div>

@@ -1,0 +1,66 @@
+////
+/// @group _settings/
+////
+
+/// @param {Number} $size - размер в процентах
+/// @param {Bool} $prefix [""] - добавить позиционированиее
+@mixin headers ($prefix: "") {
+	#{$prefix}h1,
+	#{$prefix}h2,
+	#{$prefix}h3,
+	#{$prefix}h4,
+	#{$prefix}h5,
+	#{$prefix}h6 {
+		margin: rem(25) 0;
+		line-height: 1.2;
+		font-weight: 600;
+	}
+
+	#{$prefix}h1 {
+		font-size: 1.8rem;
+
+		@include media(def) {
+			font-size: 2.3rem;
+		}
+	}
+
+	#{$prefix}h2 {
+		font-size: 1.4rem;
+
+		@include media(def) {
+			font-size: 1.8rem;
+		}
+	}
+
+	#{$prefix}h3 {
+		font-size: 1.2rem;
+
+		@include media(def) {
+			font-size: 1.4rem;
+		}
+	}
+
+	#{$prefix}h4 {
+		font-size: 1.1rem;
+
+		@include media(def) {
+			font-size: 1.2rem;
+		}
+	}
+
+	#{$prefix}h5 {
+		font-size: .9rem;
+
+		@include media(def) {
+			font-size: 1rem;
+		}
+	}
+
+	#{$prefix}h6 {
+		font-size: .8rem;
+
+		@include media(def) {
+			font-size: .9rem;
+		}
+	}
+}

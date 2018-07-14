@@ -1,0 +1,32 @@
+<%
+	/**
+	 * @name forms/demo-form-message.ejs */
+
+	// Выгружаем инструменты
+	const {FormInput, FormTextarea, Button} = app.el;
+%>
+<div class="demo">
+	<div class="title title--size-h3">Message</div>
+	<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+		<div class="form-group">
+			<%- new FormInput({
+				type: 'email',
+				placeholder: 'email',
+				name: 'email'
+			}) %>
+		</div>
+
+		<div class="form-group">
+			<%- new FormTextarea({
+				placeholder: 'message',
+				name: 'message',
+				dataRuleMinlength: 20
+			}) %>
+		</div>
+
+		<div class="form-group">
+			<%- new Button.Submit() %>
+			<%- new Button.Reset() %>
+		</div>
+	</form>
+</div>

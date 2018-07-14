@@ -1,0 +1,51 @@
+{
+	"select2--errorLoading": {
+		"ru": "Невозможно загрузить результаты",
+		"uk": "Неможливо завантажити результати",
+		"en": "The results could not be loaded.",
+		"de": "Ergebnisse können nicht geladen werden.",
+		"pl": "Nie można załadować wyników"
+	},
+	"select2--inputTooLong": {
+		"ru": "Пожалуйста, введите не более {0} символов!",
+		"uk": "Будь ласка, введіть не більш {0} символів!",
+		"en": "Please enter no more than {0} characters!",
+		"de": "Bitte geben Sie nicht mehr als {0} Zeichen ein!",
+		"pl": "Proszę wpisać nie więcej niż {0} znaków!"
+	},
+	"select2--inputTooShort": {
+		"ru": "Пожалуйста, введите не менее {0} символов!",
+		"uk": "Будь ласка, введіть не менш {0} символів!",
+		"en": "Please enter at least {0} characters!",
+		"de": "Bitte geben Sie mindestens {0} Zeichen ein!",
+		"pl": "Proszę podać co najmniej {0} znaków!"
+	},
+	"select2--loadingMore": {
+		"ru": "Загрузка данных…",
+		"uk": "Завантаження інших результатів…",
+		"en": "Loading more results…",
+		"de": "Daten werden heruntergeladen...",
+		"pl": "Ładowanie danych..."
+	},
+	"select2--maximumSelected": {
+		"ru": "Пожалуйста, выберите не более {0} пунктов!",
+		"uk": "Будь ласка, виберіть не більш {0} пунктів!",
+		"en": "Please select no more than {0} options!",
+		"de": "Bitte wählen Sie nicht mehr als {0} Optionen!",
+		"pl": "Proszę wybrać nie więcej niż {0} pozycji!"
+	},
+	"select2--noResults": {
+		"ru": "Совпадений не найдено",
+		"uk": "Нічого не знайдено",
+		"en": "No results found",
+		"de": "Keine Übereinstimmungen gefunden",
+		"pl": "Nie znaleziono pasujących elementów"
+	},
+	"select2--searching": {
+		"ru": "Поиск…",
+		"uk": "Пошук…",
+		"en": "Searching…",
+		"de": "Suche...",
+		"pl": "Wyszukiwanie..."
+	}
+}

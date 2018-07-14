@@ -1,0 +1,101 @@
+<%
+	/** подвал сайта
+	 * @name footer.ejs */
+	const {views, indexHref} = app.data;
+	const {media} = app.module;
+	const {SvgIcon} = app.el;
+	const {FormSelect, LabelError, FormTextarea, FormInput, Button} = app.el;
+%>
+%>
+<div class="footer">
+	<div class="footer__main">
+		<div class="container">
+			<div class="grid _justify-between">
+				<div class="gcell gcell--7">
+					<div class="footer__title">Contact Us</div>
+					<form class="footer__form form js-init" method="post" data-ajax="hidden/response/answer.php">
+						<div class="grid grid--2 grid--hspace-lg">
+							<div class="gcell">
+								<div class="form-group">
+									<%- new FormSelect({
+										class: 's2s js-init',
+										name: 'questionType',
+										dataS2s: JSON.stringify({
+											minimumResultsForSearch: 10
+										}),
+										innerHTML: `
+											<option selected disabled>Select single option</option>
+											<option value="01">item 01</option>
+											<option value="02">item 02</option>
+											<option value="03">item 03</option>
+											<option value="04">item 04</option>
+											<option value="05">item 05</option>
+				`
+									}) %>
+									<%- new LabelError('select-2') %>
+								</div>
+								<div class="form-group">
+									<%- new FormInput({
+										type: 'email',
+										placeholder: 'email',
+										name: 'email'
+									}) %>
+								</div>
+								<div class="form-group">
+									<div class="button__wrap  button__wrap--center">
+										<button class="button button--lite" type="submit">
+											<span>Send question</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="gcell">
+								<div class="form-group">
+									<%- new FormTextarea({
+										placeholder: 'message',
+										name: 'message',
+										dataRuleMinlength: 5
+									}) %>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="gcell gcell--4">
+					<div class="footer__logo">
+						<a href="#">
+							<img src="<%- media('assets/css/static/pic/logo_2.png')%>" alt="">
+						</a>
+					</div>
+					<div class="footer__payment">
+						<img src="<%- media('assets/css/static/pic/payment.jpg')%>" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer__bottom">
+		<div class="container">
+			<div class="footer__bottom-wrap">
+				<div class="footer__mark">© 2015-2017 ggboost.com | All Rights Reserved</div>
+
+				<div class="social social--footer">
+					<ul class="social__list">
+						<li class="social__item">
+							<a href="#" class="social__link">
+								<%- new SvgIcon('facebook')%>
+							</a>
+						</li>
+						<li class="social__item">
+							<a href="#" class="social__link">
+								<%- new SvgIcon('twitter')%>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>

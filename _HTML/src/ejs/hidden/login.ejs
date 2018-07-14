@@ -1,0 +1,80 @@
+<%
+/** пример формы обратного звонка
+ * @name callback.ejs */
+
+/** установка лейаута всплывающего окна */
+app.setLayout('_hidden.ejs');
+
+/** расширение глобального объекта app
+ * @see module:core */
+app.require('core.js')(app);
+
+const {SvgIcon} = app.el;
+const {media} = app.module;
+
+%><div class="popup">
+	<div class="container">
+		<div class="title _text-center">Login</div>
+
+		<form class="form js-init" data-ajax="hidden/response/answer.php">
+
+			<div class="form-group">
+				<input class="form-group__input" type="email" required placeholder="Your email" name="email-login">
+			</div>
+
+			<div class="form-group">
+				<input class="form-group__input" type="password" required="" placeholder="Your password"  name="password-login">
+			</div>
+
+			<div class="grid grid--1 grid--sm-2 _mt-xl _mb-xl">
+				<div class="gcell">
+					<div class="form-group">
+						<label class="form-check"><input type="checkbox" required="" name="remember-login" value="1">
+							<span>Remember me</span></label>
+						<div>
+							<label class="has-error" for="checkbox" id="checkbox-error" style="display: none;"></label>
+						</div>
+					</div>
+				</div>
+				<div class="gcell _text-right">
+					<div class="link link--type1  js-init" data-mfp="ajax" data-mfp-src="hidden/forgotPassword.php">
+						<span>Forgot your password?</span></div>
+				</div>
+			</div>
+
+
+			<div class="grid grid--1 grid--sm-2 grid--hspace-lg">
+				<div class="gcell">
+					<div class="grid _justify-center">
+						<button type="submit" class="button "><span>Enter</span></button>
+					</div>
+				</div>
+				<div class="gcell">
+					<div class="grid _justify-center">
+						<button class="button js-init" data-mfp="ajax" data-mfp-src="hidden/register.php"><span>Go to Register</span></button>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="social social--login _ptb-def">
+				<ul class="social__list">
+					<li class="social__item">
+						<span class="social__link js-init" target="_blank" data-ulogin-class=".ulogin-button-facebook">
+							<%- new SvgIcon('facebook') %>
+						</span>
+					</li>
+					<li class="social__item">
+						<span class="social__link js-init" target="_blank" data-ulogin-class=".ulogin-button-google">
+							<%- new SvgIcon('google') %>
+						</span>
+					</li>
+				</ul>
+				<div class="social__ulogin">
+					<script src="//ulogin.ru/js/ulogin.js"></script>
+					<div id="login" data-ulogin="display=panel;theme=classic;fields=first_name,last_name;providers=facebook,google;hidden=twitter,yandex,odnoklassniki,livejournal,openid,lastfm,linkedin,liveid,soundcloud,steam,flickr,uid,youtube,webmoney,foursquare,tumblr,googleplus,vimeo,instagram,wargaming;redirect_uri=http%3A%2F%2F;mobilebuttons=0;"></div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

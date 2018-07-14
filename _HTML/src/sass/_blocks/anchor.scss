@@ -1,0 +1,16 @@
+.anchor{
+	width: 25px;
+	cursor: pointer;
+	right: 1rem;
+	&:hover{
+		.anchor__icon{
+			opacity: 0.8;
+		}
+	}
+	&__icon{
+		transition: all 0.3s;
+		padding-top: 141%;
+		background: url('static/pic/anchor.png') center center no-repeat;
+		background-size: contain;
+	}
+}

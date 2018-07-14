@@ -1,0 +1,43 @@
+.repo{
+	&__head{
+		padding-bottom: 15px;
+		border-bottom: 1px solid map_get($colors, border);
+		font-family: map-get($font-family,alt);
+		margin-bottom: 15px;
+	}
+	&__name{
+		font-weight: bold;
+		font-size: 30px;
+		line-height: 1.4;
+		margin-bottom: 20px;
+	}
+	&__date{
+		color: map-get($colors,text2);
+		font-size: 14px;
+	}
+	&__description{
+
+	}
+	&__option{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__item{
+		font-family: map-get($font-family,alt);
+		font-size: 13px;
+		display: flex;
+		align-items: center;
+		margin-right: 10px;
+		span{
+			background: map_get($colors, border);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 15px;
+			height: 15px;
+			font-size: 12px;
+			margin-left: 5px;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+.status{
+	padding: 50px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	&__block{
+		max-width: 250px;
+		padding: 0 20px;
+		text-align: center;
+	}
+	&__title{
+		font-size: 20px;
+		font-family: map-get($font-family,alt);
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	&__val{
+		font-size: 18px;
+		text-transform: uppercase;
+		color: map-get($colors,alt);
+	}
+}

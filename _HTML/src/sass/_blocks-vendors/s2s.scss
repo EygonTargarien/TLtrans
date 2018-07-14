@@ -1,0 +1,62 @@
+////
+/// @group _vendors/
+////
+
+/// Description
+.s2s-container {
+	&.s2s-container--default {
+		border: 1px solid;
+		border-radius: map-get($sizes, border-radius);
+		padding: .5rem 1.5rem .5rem 1rem;
+		height: auto;
+
+		.select2-selection {
+			&__rendered {
+				padding: 0;
+				font-size: 1rem;
+				line-height: rem(22);
+			}
+
+			&__arrow {
+				height: 26px;
+				top: 50%;
+				margin-top: -13px;
+				width: 1.5rem;
+
+				b {
+					border-top-color: inherit;
+
+					.select2-container--open & {
+						border-top-color: transparent;
+						border-bottom-color: inherit;
+					}
+				}
+			}
+		}
+	}
+}
+
+.s2s-dropdown {
+	&.s2s-dropdown--default {
+		.select2-search {
+			&__field {
+				border: 1px solid;
+				border-radius: 0;
+			}
+		}
+
+		.select2-results {
+			&__options { // список
+				max-height: 200px;
+			}
+
+			&__option { // элемент списка
+				padding: .5rem 1rem;
+			}
+		}
+	}
+
+	// &.select2-dropdown--below {} // выпадайка вниз
+
+	// &.select2-dropdown--above {} // выпадайка вверх
+}

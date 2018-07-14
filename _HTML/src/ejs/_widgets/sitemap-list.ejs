@@ -1,0 +1,39 @@
+<%
+	/**
+	 * @name sitemap-list.ejs */
+
+	// выгружаем инструменты
+	const {views} = app.data;
+	const list = [{
+		href: views['index'].href,
+		title: views['index'].title,
+		children: [
+			views.sitemap,
+			{
+				href: views['ui'].href,
+				title: views['ui'].title,
+				children: [
+					views['ui-wysiwyg'],
+					views['ui-svg'],
+					views['ui-forms']
+				]
+			},
+			views['404']
+		]
+	}]
+%>
+<% function sitemapList (items) { %>
+	<ul>
+		<% items.forEach(item => { %>
+		<li>
+			<a<%- item.href ? ` href="${item.href}"` : '' %>><%- item.title %></a>
+			<% if (Array.isArray(item.children)) { %>
+				<%- sitemapList(item.children) %>
+			<% } %>
+		</li>
+		<% }); %>
+	</ul>
+<% } %>
+<div class="sitemap">
+	<%- sitemapList(list) %>
+</div>

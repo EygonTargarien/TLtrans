@@ -1,0 +1,17 @@
+<%
+	/** пример формы обратного звонка
+	 * @name callback.ejs */
+
+	/** установка лейаута всплывающего окна */
+	app.setLayout('_hidden.ejs');
+
+	/** расширение глобального объекта app
+	 * @see module:core */
+	app.require('core.js')(app);
+
+%>
+<div class="popup popup--ms">
+	<div class="container">
+		<%- app.widget('forms/callback.ejs') %>
+	</div>
+</div>

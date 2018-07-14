@@ -1,0 +1,63 @@
+<%
+	/**
+	 * @name forms/demo-form-error.ejs */
+
+	// Выгружаем инструменты
+	const {FormInput, Button} = app.el;
+%>
+<div class="demo">
+	<div class="title title--size-h3">Примеры ошибок отправки</div>
+	<form class="form _mb-def js-init" method="post" data-ajax="./hidden/response/dem324234o.json">
+		<div class="grid grid--hspace-def">
+			<div class="gcell _flex-grow">
+				<div class="form-group">
+					<%- new FormInput({
+						value: 'not found',
+						name: 'error'
+					}) %>
+				</div>
+			</div>
+			<div class="gcell">
+				<div class="form-group">
+					<%- new Button.Submit() %>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<form class="form _mb-def js-init" method="post" data-ajax="./hidden/response/error.json">
+		<div class="grid grid--hspace-def">
+			<div class="gcell _flex-grow">
+				<div class="form-group">
+					<%- new FormInput({
+						value: 'error from server',
+						name: 'error'
+					}) %>
+				</div>
+			</div>
+			<div class="gcell">
+				<div class="form-group">
+					<%- new Button.Submit() %>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<form id="error-throw-form" class="form _mb-def js-init" method="post" data-ajax="./hidden/response/error.json">
+		<div class="grid grid--hspace-def">
+			<div class="gcell _flex-grow">
+				<div class="form-group">
+					<%- new FormInput({
+						value: 'throw error',
+						name: 'error'
+					}) %>
+				</div>
+			</div>
+			<div class="gcell">
+				<div class="form-group">
+					<%- new Button.Submit() %>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

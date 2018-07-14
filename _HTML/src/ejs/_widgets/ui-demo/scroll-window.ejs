@@ -1,0 +1,19 @@
+<%
+	/** примеры кнопок скролла
+	 * @name ui-demo/scroll-window */
+
+	// Выгружаем инструменты
+	const {Button} = app.el;
+%>
+
+<%- new Button({
+	class: 'js-init',
+	dataScrollWindow: 'down',
+	innerHTML: 'scroll to down'
+}) %>
+
+<%- new Button({
+	class: 'js-init',
+	dataScrollWindow: '#anchor-lozad',
+	innerHTML: 'scroll to #anchor-lozad'
+}) %>

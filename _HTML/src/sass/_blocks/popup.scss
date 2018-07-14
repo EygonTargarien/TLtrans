@@ -1,0 +1,17 @@
+////
+/// @group _blocks/
+////
+
+/// Description
+.popup {
+	position: relative;
+	width: 600px;
+	max-width: 96%;
+	padding: 2rem;
+	margin: 1.5rem auto;
+	background-color: #fff;
+
+	&--ms {
+		max-width: map-get($breakpoints, ms);
+	}
+}

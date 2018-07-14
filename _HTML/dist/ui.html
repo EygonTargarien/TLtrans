@@ -1,0 +1,997 @@
+<?php if (!defined('HOST')) { define('HOST', '../../'); } $hiddenFolder = 'hidden/'; require_once($hiddenFolder . 'HTML.php'); use Core\HTML;  if (!function_exists('__')) { require_once($hiddenFolder . 'i18n/I18n.php'); \I18n::lang('en'); } ?>
+<!doctype html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>UI Kit</title>
+		<meta name="description" lang="en" content="description">
+		<meta name="keywords" lang="en" content="keywords">
+
+		<?php /* @TODO мета тег, только для проекта верстки */ ?>
+		<meta name="robots" content="noindex, nofollow">
+
+		<?php /* Open Graph */ ?>
+		<meta property="og:title" content="UI Kit">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="wezom-starter-template-default">
+		<meta property="og:url" content="http://TLtrans/ui">
+		<meta property="og:description" content="Краткий текст (новости, товара и т.д)">
+
+		<?php /* Touch */ ?>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+
+		<?php /* Viewport */ ?>
+
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+		<meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Your Website Title" />
+		<meta property="og:description" content="Your description" />
+		<meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
+
+		<?php /* Favicons */ ?>
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo HTML::media( 'assets/favicons/apple-touch-icon.png', false, true ); ?>">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo HTML::media( 'assets/favicons/favicon-32x32.png', false, true ); ?>">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo HTML::media( 'assets/favicons/favicon-16x16.png', false, true ); ?>">
+		<link rel="manifest" href="<?php echo HTML::media( 'assets/favicons/manifest.json', false, false ); ?>">
+		<link rel="mask-icon" href="<?php echo HTML::media( 'assets/favicons/safari-pinned-tab.svg', false, true ); ?>" color="#d01400">
+		<meta name="apple-mobile-web-app-title" content="Site name">
+		<meta name="application-name" content="Site name">
+		<meta name="msapplication-config" content="<?php echo HTML::media( 'assets/favicons/browserconfig.xml', false, true ); ?>">
+		<meta name="theme-color" content="#d01400">
+
+		<?php /* Основные стили страницы */ ?>
+		<style id="webpack-style-loader-insert-before-this"></style>
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/vendors-and-helpers.css', false, true ); ?>">
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/editor.css', false, true ); ?>">
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/style.css', false, true ); ?>">
+
+		<?php /* @TODO Общие критикал скрипты для всех страниц */ ?>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/static/critical/svg4everybody.js' ); ?>
+;(function(){document.addEventListener("DOMContentLoaded",function(){svg4everybody()})})();</script>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/critical/localstorage-test.js' ); ?></script>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/critical/localstorage-fonts.js' ); ?>
+;(function(window){window.loadFontsToLocalStorage('Fonts-WEZOM-STARTER-TEMPLATE-DEFAULT','<?php echo HTML::media( 'assets/css/static/fonts/b64-woff.css', false, true ); ?>','<?php echo HTML::media( 'assets/css/static/fonts/b64-woff2.css', false, true ); ?>');})(window);</script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="section section--mainScreen _flex-grow">
+
+				<style>
+	.demo-nav {
+		counter-reset: demo-nav;
+	}
+	.demo-nav a::before {
+		counter-increment: demo-nav;
+		content: counter(demo-nav) '. ';
+	}
+
+	.wrapper {
+		counter-reset: demo-title;
+	}
+	.demo-title::before {
+		counter-increment: demo-title;
+		content: counter(demo-title) '. ';
+	}
+</style>
+				<div id="top" class="section _pt-def">
+					<div class="container">
+						<div class="title title--size-h1">UI Kit</div>
+
+						<div class="breadcrumbs">
+
+							<span>
+								<a href="index.html">Главная страница</a>
+							</span>
+
+							<span>
+								<a>UI Kit</a>
+							</span>
+
+						</div>
+
+						<div class="title title--size-h3">Карта сайта</div>
+
+						<div class="sitemap">
+
+							<ul>
+
+								<li>
+									<a href="index.html">Главная страница</a>
+
+									<ul>
+
+										<li>
+											<a href="sitemap.html">Карта сайта</a>
+
+										</li>
+
+										<li>
+											<a href="ui.html">UI Kit</a>
+
+											<ul>
+
+												<li>
+													<a href="ui-wysiwyg.html">UI Типография</a>
+
+												</li>
+
+												<li>
+													<a href="ui-svg.html">UI SVG Icons</a>
+
+												</li>
+
+												<li>
+													<a href="ui-forms.html">UI Формы</a>
+
+												</li>
+
+											</ul>
+
+										</li>
+
+										<li>
+											<a href="404.html">404 Страница не найдена</a>
+
+										</li>
+
+									</ul>
+
+								</li>
+
+							</ul>
+
+						</div>
+
+						<div class="wysiwyg">
+							<p>Список блоков:</p>
+							<div class="grid grid--auto grid--space-def demo-nav">
+								<div>
+									<a href="#anchor-title">title</a>
+								</div>
+								<div>
+									<a href="#anchor-lozad">lozad</a>
+								</div>
+								<div>
+									<a href="#anchor-buttons">buttons</a>
+								</div>
+								<div>
+									<a href="#anchor-scroll-window">scroll-window</a>
+								</div>
+								<div>
+									<a href="#anchor-magnific-popup">magnific-popup</a>
+								</div>
+								<div>
+									<a href="#anchor-colors">colors</a>
+								</div>
+								<div>
+									<a href="#anchor-wstabs">wstabs</a>
+								</div>
+								<div>
+									<a href="#anchor-accordion">accordion</a>
+								</div>
+								<div>
+									<a href="#anchor-pagination">pagination</a>
+								</div>
+								<div>
+									<a href="#anchor-google-map">google-map</a>
+								</div>
+							</div>
+						</div>
+						<hr>
+					</div>
+				</div>
+
+				<div class="section _ptb-lg" id="anchor-title">
+					<div class="container">
+
+						<div class="title title--size-h3 demo-title">
+							<span>title</span>
+							<a href="#anchor-title" title="Установить якорь">#</a>
+							<a href="#top" title="Наверх">&uuarr;</a>
+						</div>
+
+						<div class="container">
+							<div class="grid grid--1 grid--md-2 grid--space-xl">
+								<div class="gcell">
+									<div class="title title--size-h1">Title. Size h1</div>
+									<div class="title title--size-h2">Title. Size h2</div>
+									<div class="title title--size-h3">Title. Size h3</div>
+									<div class="title title--size-h4">Title. Size h4</div>
+									<div class="title title--size-h5">Title. Size h5</div>
+									<div class="title title--size-h6">Title. Size h6</div>
+								</div>
+								<div class="gcell">
+									<div class="title title--light title--size-h1">Title light. Size h1</div>
+									<div class="title title--light title--size-h2">Title light. Size h2</div>
+									<div class="title title--light title--size-h3">Title light. Size h3</div>
+									<div class="title title--light title--size-h4">Title light. Size h4</div>
+									<div class="title title--light title--size-h5">Title light. Size h5</div>
+									<div class="title title--light title--size-h6">Title light. Size h6</div>
+								</div>
+								<div class="gcell">
+									<div class="title">Custom title.</div>
+								</div>
+							</div>
+						</div>
+
+						<hr>
+					</div>
+				</div>
+
+				<div class="section _ptb-lg" id="anchor-buttons">
+					<div class="container">
+
+						<div class="title title--size-h3 demo-title">
+							<span>buttons</span>
+							<a href="#anchor-buttons" title="Установить якорь">#</a>
+							<a href="#top" title="Наверх">&uuarr;</a>
+						</div>
+
+						<span class="button">
+							<span>Span</span>
+						</span>
+
+						<a class="button" href="#">
+							<span>Link</span>
+						</a>
+
+						<button class="button">
+							<span>Button</span>
+						</button>
+
+						<div class="button">
+							<span>Div</span>
+						</div>
+
+						<div class="button button-new tst">
+							<span>Custom</span>
+						</div>
+
+						<hr>
+					</div>
+				</div>
+
+				<div class="section _ptb-lg" id="anchor-lozad">
+					<div class="container">
+
+						<div class="title title--size-h3 demo-title">
+							<span>lozad</span>
+							<a href="#anchor-lozad" title="Установить якорь">#</a>
+							<a href="#top" title="Наверх">&uuarr;</a>
+						</div>
+
+						<div class="grid grid--2 grid--def-3 grid--space-def">
+							<div class="gcell">
+								<img class="lozad js-init" alt width="750" height="750" src="<?php echo HTML::media( 'assets/images/placeholders/no-avatar-thumb.png', false, true ); ?>" data-lozad="<?php echo HTML::media( 'assets/images/placeholders/no-avatar-original.png', false, true ); ?>">
+							</div>
+							<div class="gcell">
+								<picture class="lozad js-init" style="display: block; min-height: 1rem" data-iesrc="<?php echo HTML::media( 'assets/images/placeholders/no-image-original.png', false, true ); ?>">
+									<source media="(min-width: 1280px)" srcset="<?php echo HTML::media( 'assets/images/placeholders/no-image-original.png', false, true ); ?>">
+									<source media="(min-width: 980px)" srcset="<?php echo HTML::media( 'assets/images/placeholders/no-image-default.png', false, true ); ?>">
+									<source media="(min-width: 320px)" srcset="<?php echo HTML::media( 'assets/images/placeholders/no-image-thumb.png', false, true ); ?>">
+								</picture>
+							</div>
+							<div class="gcell">
+								<div class="_def-show">
+									<img class="lozad js-init" alt width="750" height="750" src="<?php echo HTML::media( 'assets/images/empty.gif', false, true ); ?>" data-lozad="<?php echo HTML::media( 'assets/images/demo-2-image.png', false, true ); ?>">
+								</div>
+							</div>
+
+							<div class="gcell">
+								<div class="_def-show">
+									<div class="lozad js-init" style="background-image: url(<?php echo HTML::media( 'assets/images/placeholders/no-avatar-thumb.png', false, true ); ?>);width: 400px; height: 400px" data-lozad="<?php echo HTML::media( 'assets/images/demo-2-image.png', false, true ); ?>">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<hr>
+					</div>
+				</div>
+
+				<div class="section _ptb-lg" id="anchor-scroll-window">
+					<div class="container">
+
+						<div class="title title--size-h3 demo-title">
+							<span>scroll-window</span>
+							<a href="#anchor-scroll-window" title="Установить якорь">#</a>
+							<a href="#top" title="Наверх">&uuarr;</a>
+						</div>
+
+						<button class="button js-init" data-scroll-window="down">
+							<span>scroll to down</span>
+						</button>
+
+						<button class="button js-init" data-scroll-window="#anchor-lozad">
+							<span>scroll to #anchor-lozad</span>
+						</button>
+
+						<hr>
+					</div>
+				</div>
+
+				<div class="section _ptb-lg" id="anchor-magnific-popup">
+					<div class="container">
+
+						<div class="title title--size-h3 demo-title">
+							<span>magnific popup</span>
+							<a href="#anchor-magnific-popup" title="Установить якорь">#</a>
+							<a href="#top" title="Наверх">&uuarr;</a>
+						</div>
+
+						<div>
+							<button class="button js-init" data-mfp="ajax" data-mfp-src="hidden/callback.php" data-param='{"key":"value"}'>
+								<span>js-mfp-ajax</span>
+							</button>
+
+							<button class="button js-init" data-mfp="iframe" data-mfp-src="http://www.youtube.com/watch?v=4GUwXxqwyu4">
+								<span>js-mfp-iframe</span>
+							</button>
+
+							<button class="button js-init" data-mfp="inline" data-mfp-src="#demo-mfp-inline">
+								<span>js-mfp-inline</span>
+							</button>
+
+							<div style="display: none;">
+								<div id="demo-mfp-inline" class="popup">
+									<div class="container">
+										<div class="title title--size-h2">Inline demo</div>
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aperiam beatae consectetur consequuntur dolor ducimus eius enim, est maxime molestias necessitatibus nostrum nulla quaerat ratione veritatis, voluptate voluptatibus voluptatum.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="js-init" data-mfp="gallery">
+								<button class="button" data-mfp-src="<?php echo HTML::media( 'assets/images/placeholders/no-avatar-default.png', false, true ); ?>">
+									<span>js-mfp-gallery 1</span>
+								</button>
+
+								<button class="button" data-mfp-src="http://www.youtube.com/watch?v=4GUwXxqwyu4">
+									<span>js-mfp-gallery youtube</span>
+								</button>
+
+								<button class="button" data-mfp-src="<?php echo HTML::media( 'assets/images/placeholders/no-image-default.png', false, true ); ?>">
+									<span>js-mfp-gallery 2</span>
+								</button>
+
+							</div>
+						</div>
+
+						<hr>
+					</div>
+				</div>
+
+				<div class="section _ptb-lg" id="anchor-colors">
+					<div class="container">
+
+						<div class="title title--size-h3 demo-title">
+							<span>colors</span>
+							<a href="#anchor-colors" title="Установить якорь">#</a>
+							<a href="#top" title="Наверх">&uuarr;</a>
+						</div>
+
+						<div class="container">
+							<div class="grid grid--2 grid--sm-3 grid--space-lg">
+
+								<div class="gcell">
+									<div class="_plr-lg _ptb-md _mb-sm _bgcolor-light" style="border: 1px solid rgba(0,0,0,0.05)">
+										<span data-demo-color>&nbsp;</span>
+									</div>
+									<span>light</span>
+								</div>
+
+								<div class="gcell">
+									<div class="_plr-lg _ptb-md _mb-sm _bgcolor-dark" style="border: 1px solid rgba(0,0,0,0.05)">
+										<span data-demo-color>&nbsp;</span>
+									</div>
+									<span>dark</span>
+								</div>
+
+								<div class="gcell">
+									<div class="_plr-lg _ptb-md _mb-sm _bgcolor-main" style="border: 1px solid rgba(0,0,0,0.05)">
+										<span data-demo-color>&nbsp;</span>
+									</div>
+									<span>main</span>
+								</div>
+
+								<div class="gcell">
+									<div class="_plr-lg _ptb-md _mb-sm _bgcolor-secondary" style="border: 1px solid rgba(0,0,0,0.05)">
+										<span data-demo-color>&nbsp;</span>
+									</div>
+									<span>secondary</span>
+								</div>
+
+								<div class="gcell">
+									<div class="_plr-lg _ptb-md _mb-sm _bgcolor-active" style="border: 1px solid rgba(0,0,0,0.05)">
+										<span data-demo-color>&nbsp;</span>
+									</div>
+									<span>active</span>
+								</div>
+
+								<div class="gcell">
+									<div class="_plr-lg _ptb-md _mb-sm _bgcolor-bg" style="border: 1px solid rgba(0,0,0,0.05)">
+										<span data-demo-color>&nbsp;</span>
+									</div>
+									<span>bg</span>
+								</div>
+
+								<div class="gcell">
+									<div class="_plr-lg _ptb-md _mb-sm _bgcolor-border" style="border: 1px solid rgba(0,0,0,0.05)">
+										<span data-demo-color>&nbsp;</span>
+									</div>
+									<span>border</span>
+								</div>
+
+								<div class="gcell">
+									<div class="_plr-lg _ptb-md _mb-sm _bgcolor-text" style="border: 1px solid rgba(0,0,0,0.05)">
+										<span data-demo-color>&nbsp;</span>
+									</div>
+									<span>text</span>
+								</div>
+
+								<div class="gcell">
+									<div class="_plr-lg _ptb-md _mb-sm _bgcolor-accent" style="border: 1px solid rgba(0,0,0,0.05)">
+										<span data-demo-color>&nbsp;</span>
+									</div>
+									<span>accent</span>
+								</div>
+
+								<div class="gcell">
+									<div class="_plr-lg _ptb-md _mb-sm _bgcolor-warn" style="border: 1px solid rgba(0,0,0,0.05)">
+										<span data-demo-color>&nbsp;</span>
+									</div>
+									<span>warn</span>
+								</div>
+
+								<div class="gcell">
+									<div class="_plr-lg _ptb-md _mb-sm _bgcolor-error" style="border: 1px solid rgba(0,0,0,0.05)">
+										<span data-demo-color>&nbsp;</span>
+									</div>
+									<span>error</span>
+								</div>
+
+								<script>
+			(function (window) {
+				document.addEventListener("DOMContentLoaded", function () {
+					var $ = window.jQuery;
+					$('[data-demo-color]').each(function () {
+						var $color = $(this);
+						var $block = $color.parent();
+						var hexColor = rgb2hex($block.css('background-color'));
+						var textColor = isDarkColor(hexColor) ? '#fff' : '#000';
+						$color.text(hexColor).css('color', textColor);
+					});
+
+					function rgb2hex (rgb) {
+						rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+						return (rgb && rgb.length === 4) ? "#" +
+						       ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) +
+						       ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) +
+						       ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2) : '';
+					}
+
+					function isDarkColor (hex) {
+						var hex = hex.substring(1);
+						var rgb = parseInt(hex, 16);
+						var r = (rgb >> 16) & 0xff;
+						var g = (rgb >> 8) & 0xff;
+						var b = (rgb >> 0) & 0xff;
+
+						var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+						return luma < 65;
+					}
+				});
+			})(window);
+		</script>
+							</div>
+						</div>
+
+						<hr>
+					</div>
+				</div>
+
+				<div class="section _ptb-lg" id="anchor-wstabs">
+					<div class="container">
+
+						<div class="title title--size-h3 demo-title">
+							<span>wstabs</span>
+							<a href="#anchor-wstabs" title="Установить якорь">#</a>
+							<a href="#top" title="Наверх">&uuarr;</a>
+						</div>
+
+						<div class="container">
+							<div class="_mb-def">
+								<button class="button wstabs-button is-active" data-wstabs-ns="group-1" data-wstabs-button="1">
+									<span>wstabs button 1</span>
+								</button>
+
+								<button class="button wstabs-button" data-wstabs-ns="group-1" data-wstabs-button="2">
+									<span>wstabs button 2</span>
+								</button>
+
+								<button class="button wstabs-button" data-wstabs-ns="group-1" data-wstabs-button="3">
+									<span>wstabs button 3</span>
+								</button>
+
+							</div>
+							<div class="demo">
+								<div class="wstabs-block is-active" data-wstabs-ns="group-1" data-wstabs-block="1">
+									<div class="wysiwyg">
+										<h3>wstabs-block 1</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur culpa cupiditate dicta dolorum, ea et, incidunt minus natus, odio repellendus veniam voluptas? Ab nemo obcaecati pariatur quidem quis voluptate?</p>
+									</div>
+								</div>
+								<div class="wstabs-block" data-wstabs-ns="group-1" data-wstabs-block="2">
+									<div class="wysiwyg">
+										<h3>wstabs-block 2</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur culpa cupiditate dicta dolorum, ea et, incidunt minus natus, odio repellendus veniam voluptas? Ab nemo obcaecati pariatur quidem quis voluptate?</p>
+									</div>
+								</div>
+								<div class="wstabs-block" data-wstabs-ns="group-1" data-wstabs-block="3">
+									<div class="wysiwyg">
+										<h3>wstabs-block 3</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur culpa cupiditate dicta dolorum, ea et, incidunt minus natus, odio repellendus veniam voluptas? Ab nemo obcaecati pariatur quidem quis voluptate?</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="_mt-def">
+								<button class="button wstabs-button is-active" data-wstabs-ns="group-1" data-wstabs-button="1">
+									<span>wstabs button 1, sync</span>
+								</button>
+
+								<button class="button wstabs-button" data-wstabs-ns="group-1" data-wstabs-button="2">
+									<span>wstabs button 2, sync</span>
+								</button>
+
+								<button class="button wstabs-button" data-wstabs-ns="group-1" data-wstabs-button="3">
+									<span>wstabs button 3, sync</span>
+								</button>
+
+							</div>
+						</div>
+
+						<div class="container">
+							<h4>Пример запуска/паузы вложенного видео при активации табов</h4>
+
+							<div class="_mb-def">
+								<button class="button wstabs-button is-active" data-wstabs-ns="group-video" data-wstabs-button="1">
+									<span>Video code</span>
+								</button>
+
+								<button class="button wstabs-button" data-wstabs-ns="group-video" data-wstabs-button="2">
+									<span>Video play</span>
+								</button>
+
+							</div>
+							<div class="demo">
+								<div class="wstabs-block is-active" data-wstabs-ns="group-video" data-wstabs-block="1">
+									<div class="wysiwyg js-init" data-prismjs>
+										<pre>
+					<code class="language-ejs">
+&lt;div id="video-tab-block" class="wstabs-block" data-wstabs-ns="group-video" data-wstabs-block="2">
+	&lt;div class="wysiwyg">
+		&lt;video controls width="1280" height="720"
+				src="&lt;%- app.module.media('assets/files/video.mp4') %&gt;"
+				poster="&lt;%- app.module.media('assets/files/poster.jpg') %&gt;">&lt;/video>
+	&lt;/div>
+&lt;/div>
+					</code>
+				</pre>
+										<pre>
+					<code class="language-javascript">
+import wsTabs from './_modules/wstabs';
+
+let $videoBlock = $('#video-tab-block');
+let video = $videoBlock.find('video')[0];
+
+$videoBlock.on(wsTabs.events.on, () => {
+	video.play();
+});
+
+$videoBlock.on(wsTabs.events.off, () => {
+	video.pause();
+});
+					</code>
+				</pre>
+									</div>
+								</div>
+								<div id="video-tab-block" class="wstabs-block" data-wstabs-ns="group-video" data-wstabs-block="2">
+									<div class="wysiwyg">
+										<video controls width="1280" height="720" src="<?php echo HTML::media( 'assets/files/video.mp4', false, true ); ?>" poster="<?php echo HTML::media( 'assets/files/poster.jpg', false, true ); ?>"></video>
+									</div>
+								</div>
+							</div>
+							<script>
+		(function (window) {
+			document.addEventListener("DOMContentLoaded", function () {
+				var $ = window.jQuery;
+				var $videoBlock = $('#video-tab-block');
+				var video = $videoBlock.find('video')[0];
+
+				$videoBlock.on('wstabs-on', function () {
+					video.play();
+				});
+
+				$videoBlock.on('wstabs-off', function () {
+					video.pause();
+				});
+			});
+		})(window);
+	</script>
+						</div>
+
+						<hr>
+					</div>
+				</div>
+
+				<div class="section _ptb-lg" id="anchor-accordion">
+					<div class="container">
+
+						<div class="title title--size-h3 demo-title">
+							<span>accordion</span>
+							<a href="#anchor-accordion" title="Установить якорь">#</a>
+							<a href="#top" title="Наверх">&uuarr;</a>
+						</div>
+						<div class="grid grid--1 grid--md-2 grid--space-def">
+							<div class="gcell">
+								<div class="title title--size-h4">single</div>
+
+								<ul class="accordion js-init" data-accordion='{"type":"single","openClass":"is-open","slideTime":300}'>
+
+									<li class="accordion-item _mb-sm">
+
+										<div class="accordion-item__button is-active" data-wstabs-ns="accordion-example-single" data-wstabs-button="0">
+											<button class="button button--full-width _mb-sm">
+												<span>Item 1</span>
+											</button>
+
+										</div>
+										<div class="accordion-item__block is-active" style="display: none" data-wstabs-ns="accordion-example-single" data-wstabs-block="0">
+											<div class="demo">
+												<div class="wysiwyg">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci expedita harum iusto minima mollitia nulla officiis placeat, quam. Commodi ducimus earum incidunt inventore mollitia optio sequi, temporibus! Alias eligendi, unde.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+
+									<li class="accordion-item _mb-sm">
+
+										<div class="accordion-item__button" data-wstabs-ns="accordion-example-single" data-wstabs-button="1">
+											<button class="button button--full-width _mb-sm">
+												<span>Item 2</span>
+											</button>
+
+										</div>
+										<div class="accordion-item__block" style="display: none" data-wstabs-ns="accordion-example-single" data-wstabs-block="1">
+											<div class="demo">
+												<div class="wysiwyg">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci expedita harum iusto minima mollitia nulla officiis placeat, quam. Commodi ducimus earum incidunt inventore mollitia optio sequi, temporibus! Alias eligendi, unde.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+
+									<li class="accordion-item _mb-sm">
+
+										<div class="accordion-item__button" data-wstabs-ns="accordion-example-single" data-wstabs-button="2">
+											<button class="button button--full-width _mb-sm">
+												<span>Item 3</span>
+											</button>
+
+										</div>
+										<div class="accordion-item__block" style="display: none" data-wstabs-ns="accordion-example-single" data-wstabs-block="2">
+											<div class="demo">
+												<div class="wysiwyg">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci expedita harum iusto minima mollitia nulla officiis placeat, quam. Commodi ducimus earum incidunt inventore mollitia optio sequi, temporibus! Alias eligendi, unde.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+
+								</ul>
+
+							</div>
+							<div class="gcell">
+								<div class="title title--size-h4">multiple</div>
+
+								<ul class="accordion js-init" data-accordion='{"type":"multiple","openClass":"is-open","slideTime":300}'>
+
+									<li class="accordion-item _mb-sm">
+
+										<div class="accordion-item__button is-active" data-wstabs-ns="accordion-example-multiple" data-wstabs-button="0">
+											<button class="button button--full-width _mb-sm">
+												<span>Item 1</span>
+											</button>
+
+										</div>
+										<div class="accordion-item__block is-active" style="display: none" data-wstabs-ns="accordion-example-multiple" data-wstabs-block="0">
+											<div class="demo">
+												<div class="wysiwyg">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci expedita harum iusto minima mollitia nulla officiis placeat, quam. Commodi ducimus earum incidunt inventore mollitia optio sequi, temporibus! Alias eligendi, unde.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+
+									<li class="accordion-item _mb-sm">
+
+										<div class="accordion-item__button" data-wstabs-ns="accordion-example-multiple" data-wstabs-button="1">
+											<button class="button button--full-width _mb-sm">
+												<span>Item 2</span>
+											</button>
+
+										</div>
+										<div class="accordion-item__block" style="display: none" data-wstabs-ns="accordion-example-multiple" data-wstabs-block="1">
+											<div class="demo">
+												<div class="wysiwyg">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci expedita harum iusto minima mollitia nulla officiis placeat, quam. Commodi ducimus earum incidunt inventore mollitia optio sequi, temporibus! Alias eligendi, unde.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+
+									<li class="accordion-item _mb-sm">
+
+										<div class="accordion-item__button" data-wstabs-ns="accordion-example-multiple" data-wstabs-button="2">
+											<button class="button button--full-width _mb-sm">
+												<span>Item 3</span>
+											</button>
+
+										</div>
+										<div class="accordion-item__block" style="display: none" data-wstabs-ns="accordion-example-multiple" data-wstabs-block="2">
+											<div class="demo">
+												<div class="wysiwyg">
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci expedita harum iusto minima mollitia nulla officiis placeat, quam. Commodi ducimus earum incidunt inventore mollitia optio sequi, temporibus! Alias eligendi, unde.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+
+								</ul>
+
+							</div>
+						</div>
+						<hr>
+					</div>
+				</div>
+
+				<div class="section _ptb-lg" id="anchor-pagination">
+					<div class="container">
+
+						<div class="title title--size-h3 demo-title">
+							<span>pagination</span>
+							<a href="#anchor-pagination" title="Установить якорь">#</a>
+							<a href="#top" title="Наверх">&uuarr;</a>
+						</div>
+
+						<div class="pagination">
+							<a class="pagination__number" href="#">1</a>
+							<?php /* @TODO Текущей странице не добавлять атрибут `href` */ ?>
+							<a class="pagination__number pagination__number--current">2</a>
+							<a class="pagination__number" href="#">3</a>
+							<a class="pagination__number" href="#">4</a>
+							<a class="pagination__number" href="#">...</a>
+							<a class="pagination__number" href="#">48</a>
+
+							<?php /* @TODO Если страница первая или последняя - не добавлять атрибут `href`, соответствующей стрелке */ ?>
+							<a class="pagination__arrow pagination__arrow--prev">&lArr;</a>
+							<a class="pagination__arrow pagination__arrow--next" href="#">&rArr;</a>
+						</div>
+
+						<hr>
+					</div>
+				</div>
+
+				<div class="section _ptb-lg" id="anchor-google-map">
+					<div class="container">
+
+						<div class="title title--size-h3 demo-title">
+							<span>google-map</span>
+							<a href="#anchor-google-map" title="Установить якорь">#</a>
+							<a href="#top" title="Наверх">&uuarr;</a>
+						</div>
+
+						<div class="_mb-def">
+							<div class="google-map js-init" data-google-map>
+								<div class="google-map__container" data-google-map-container></div>
+								<div style="display: none;">
+
+									<div class="google-map-point is-active" data-wstabs-ns="google-map-single" data-wstabs-button="0" data-google-map-point='{
+	"icon": "<?php echo HTML::media( ' assets/images/placeholders/google-map-marker.png ', false, true ); ?>",
+	"position": {
+		"lat": 46.63082,
+		"lng": 32.6034777
+	}
+}'>
+										<div class="google-map-infowindow" data-google-map-infowindow>
+											<div class="wysiwyg">
+												<p>
+													Lorem ipsum dolor sit amet
+													<br>
+													<a href="tel:xxx">+38(050)123-45-67</a>
+													<br>
+													<a href="mailto:demo-site@gmail.com">demo-site@gmail.com</a>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="google-map js-init" data-google-map>
+							<div class="grid grid--space-def">
+								<div class="gcell gcell--4">
+
+									<div class="google-map-point is-active" data-wstabs-ns="google-map-multiple" data-wstabs-button="0" data-google-map-point='{
+	"zoom": 5,
+	"icon": "<?php echo HTML::media( ' assets/images/placeholders/google-map-marker.png ', false, true ); ?>",
+	"position": {
+		"lat": 46.63082,
+		"lng": 32.6034777
+	}
+}'>
+										<div class="title title--size-h4">Point title 1</div>
+
+										<div class="google-map-infowindow" data-google-map-infowindow>
+											<div class="wysiwyg">
+												<p>
+													1 Lorem ipsum dolor sit amet
+													<br>
+													<a href="tel:xxx">+38(050)123-45-67</a>
+													<br>
+													<a href="mailto:demo-site@gmail.com">demo-site@gmail.com</a>
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="google-map-point" data-wstabs-ns="google-map-multiple" data-wstabs-button="1" data-google-map-point='{
+	"zoom": 6,
+	"icon": "<?php echo HTML::media( ' assets/images/placeholders/google-map-marker-2.png ', false, true ); ?>",
+	"position": {
+		"lat": 49.9947277,
+		"lng": 36.1457428
+	}
+}'>
+										<div class="title title--size-h4">Point title 2</div>
+
+										<div class="google-map-infowindow" data-google-map-infowindow>
+											<div class="wysiwyg">
+												<p>
+													2 Lorem ipsum dolor sit amet
+													<br>
+													<a href="tel:xxx">+38(050)123-45-67</a>
+													<br>
+													<a href="mailto:demo-site@gmail.com">demo-site@gmail.com</a>
+												</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="google-map-point" data-wstabs-ns="google-map-multiple" data-wstabs-button="2" data-google-map-point='{
+	"zoom": 7,
+	"icon": "<?php echo HTML::media( ' assets/images/placeholders/google-map-marker-3.png ', false, true ); ?>",
+	"position": {
+		"lat": 49.8327787,
+		"lng": 23.9421961
+	}
+}'>
+										<div class="title title--size-h4">Point title 3</div>
+
+										<div class="google-map-infowindow" data-google-map-infowindow>
+											<div class="wysiwyg">
+												<p>
+													3 Lorem ipsum dolor sit amet
+													<br>
+													<a href="tel:xxx">+38(050)123-45-67</a>
+													<br>
+													<a href="mailto:demo-site@gmail.com">demo-site@gmail.com</a>
+												</p>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="gcell gcell--8">
+									<div class="google-map__container" data-google-map-container></div>
+								</div>
+							</div>
+						</div>
+
+						<hr>
+					</div>
+				</div>
+
+			</div>
+			<div class="section ">
+			</div>
+		</div>
+
+		<div class="anchor scroll-up js-init" data-scroll-window="up">
+			<div class="anchor__icon"></div>
+		</div>
+
+		<?php /* @TODO Заменить на путь к файлу js переводам админки `Media/js-translations/${lang}.js` */ ?>
+		<script src="<?php echo HTML::media( '../_HTML/dist/hidden/js-translations/en.js', false, true ); ?>"></script>
+		<script>
+	window.wezomConfig = {
+		<?php /* @TODO Заменить Google Maps JavaScript API
+	https://developers.google.com/maps/documentation/javascript/get-api-key#key */ ?>
+		googleMapQueries: {
+			key: 'AIzaSyA0iD6g_lPIH2uMxwOwennIBu5q1qszd_s',
+			language: 'uk',
+			region: 'UA'
+		}
+	}
+</script>
+		<?php /* Основные скрипты страницы */ ?>
+		<script src="<?php echo HTML::media( 'assets/js/modernizr.js', false, true ); ?>"></script>
+		<script src="<?php echo HTML::media( 'assets/js/initialize.js', false, true ); ?>"></script>
+
+		<?php /* @TODO Определение старых браузеров */ ?>
+		<script>window.$wzmOld_URL_IMG = '<?php echo HTML::media( 'assets/css/static/pic/wezom-info-red.gif', false, true ); ?>';</script>
+		<script async defer src="<?php echo HTML::media( 'assets/js/static/wezom-old.min.js', false, true ); ?>"></script>
+
+		<?php /* Плашка с уведомлением об отключенном JavaScript */ ?>
+
+		<noscript>
+			<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/noscript.css', false, true ); ?>">
+			<div class="noscript-msg">
+				<input id="noscript-msg__input" class="noscript-msg__input" type="checkbox" title="Закрыть">
+				<div class="noscript-msg__container">
+					<label class="noscript-msg__close" for="noscript-msg__input">&times;</label>
+					<a class="noscript-msg__wezom-link" href="http://wezom.com.ua/" target="_blank" title="Агентство системных интернет-решений Wezom">&nbsp;</a>
+					<div class="noscript-msg__content">
+
+						<p>В Вашем браузере
+							<b>отключен JavaScript!</b> Для корректной работы с сайтом необходима поддержка Javascript.
+						</p>
+						<p>Мы рекомендуем Вам включить использование JavaScript в настройках вашего браузера.</p>
+					</div>
+				</div>
+			</div>
+		</noscript>
+
+		<div class="cookie is-hidden" data-cookie-info>
+			<div class="container">
+				<div class="grid grid--space-def _pt-def">
+					<div class="gcell _flex-grow">
+						<p class="cookie__content">
+							Этот сайт использует файлы cookie и похожие технологии, чтобы гарантировать максимальное удобство пользователям.
+							<br> При использовании данного сайта, вы подтверждаете свое согласие на использование файлов cookie в соответствии с настоящим уведомлением в отношении данного типа файлов
+							<br> Если вы не согласны с тем, чтобы мы использовали данный тип файлов, то вы должны соответствующим образом установить настройки вашего браузера или не использовать сайт TLtrans.
+						</p>
+					</div>
+					<div class="gcell _flex-noshrink">
+						<span class="button" data-cookie-submit>
+							<span>Согласен</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!---->
+
+	</body>
+</html>

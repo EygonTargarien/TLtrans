@@ -1,0 +1,14 @@
+.link{
+  font-family: map-get($font-family,alt);
+  &--type1{
+    text-transform: uppercase;
+    text-align: right;
+    span{
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover{
+        color: map-get($colors,alt);
+      }
+    }
+  }
+}

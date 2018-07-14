@@ -1,0 +1,47 @@
+////
+/// @group _blocks/
+////
+
+/// Пользовательские заголовки
+.title {
+	font-family: map-get($font-family, alt);
+	text-transform: uppercase;
+	font-size: rem(43);
+	margin-bottom: 20px;
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&--light {
+		font-weight: 300;
+	}
+	&--center{
+		text-align: center;
+	}
+
+	a {
+		&[href] {
+			text-decoration: none;
+			color: map-get($colors-link, default);
+
+			&:hover {
+				color: map-get($colors-link, hover);
+			}
+
+			&:active {
+				color: map-get($colors-link, active);
+			}
+		}
+	}
+
+	&--sm{
+		font-size: 25px;
+		margin-bottom: 10px;
+	}
+}
+
+@include headers('.title--size-');

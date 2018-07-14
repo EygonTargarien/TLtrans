@@ -1,0 +1,34 @@
+<%
+	/**
+	 * @name forms/demo-form-numbers.ejs */
+
+	// Выгружаем инструменты
+	const {FormInput, Button} = app.el;
+%>
+<div class="demo">
+	<div class="title title--size-h3">Числа</div>
+	<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+		<div class="form-group">
+			<%- new FormInput({
+				type: 'number',
+				placeholder: 'number',
+				name: 'number',
+				dataRuleNumber: true
+			}) %>
+		</div>
+
+		<div class="form-group">
+			<%- new FormInput({
+				type: 'number',
+				placeholder: 'digits',
+				name: 'digits',
+				dataRuleDigits: true
+			}) %>
+		</div>
+
+		<div class="form-group">
+			<%- new Button.Submit() %>
+			<%- new Button.Reset() %>
+		</div>
+	</form>
+</div>

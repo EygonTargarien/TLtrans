@@ -1,0 +1,47 @@
+<%
+	/** Хлебные крошки
+	 * @name breadcrumbs.ejs */
+
+	const {
+		list = [],
+		xmlns = false,
+		schema = false
+	} = app.entry;
+
+	if (list.length < 2) {
+		// noinspection JSAnnotator
+		return '';
+	}
+
+	const lastIndex = list.length - 1;
+	const href = (i, item) => (i === lastIndex) ? '' : ` href="${item.href}"`;
+	const rel = (i, item) => ((i === lastIndex) ? '' : ` rel="v:url"`) + href(i, item);
+%>
+<% if (xmlns) { %>
+	<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+		<% list.forEach((item, i) => { %>
+			<span typeof="v:Breadcrumb">
+				<a property="v:title"<%- rel(i, item) %>><%- item.title %></a>
+			</span>
+		<% }); %>
+	</div>
+<% } else if (schema) { %>
+	<ul class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+		<% list.forEach((item, i) => { %>
+			<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+				<span itemprop="item">
+					<a itemprop="name"<%- href(i, item) %>><%- item.title %></a>
+				</span>
+				<meta itemprop="position" content="<%- ++i %>">
+			</li>
+		<% }); %>
+	</ul>
+<% } else { %>
+	<div class="breadcrumbs">
+		<% list.forEach((item, i) => { %>
+			<span>
+				<a<%- href(i, item) %>><%- item.title %></a>
+			</span>
+		<% }); %>
+	</div>
+<% } %>

@@ -1,0 +1,72 @@
+{
+	"Опубликовано": {
+		"ru": "Опубликовано",
+		"uk": "Опубліковано",
+		"en": "Published on",
+		"de": "Veröffentlicht am",
+		"pl": "Opublikowano w"
+	},
+	"Нет": {
+		"ru": "Нет",
+		"uk": "Так",
+		"en": "None",
+		"de": "Nein",
+		"pl": "Nie"
+	},
+	"Да": {
+		"ru": "Да",
+		"uk": "Так",
+		"en": "Yes",
+		"de": "Ja",
+		"pl": "Tak"
+	},
+	"Закрыть": {
+		"ru": "Закрыть",
+		"uk": "Закрити",
+		"en": "Close",
+		"de": "Schließen",
+		"pl": "Zamknij"
+	},
+	"Отключен JavaScript строка 1": {
+		"ru": "<b>В Вашем браузере отключен JavaScript!</b> Для корректной работы с сайтом необходима поддержка Javascript.",
+		"uk": "<b>У Вашому браузері відключений JavaScript!</b> Для коректної роботи з сайтом необхідна підтримка Javascript!",
+		"en": "<b>JavaScript is disabled</b> in your browser! For correct work with the site you need Javascript support!",
+		"de": "<b>JavaScript ist in Ihrem Browser deaktiviert</b>! Für die korrekte Arbeit mit der Website benötigen Sie Javascript-Unterstützung!",
+		"pl": "<b>JavaScript jest wyłączony w Twojej przeglądarce!</b> Do poprawnej pracy z witryną potrzebujesz wsparcia Javascript!"
+	},
+	"Отключен JavaScript строка 2": {
+		"ru": "Мы рекомендуем Вам включить использование JavaScript в настройках вашего браузера.",
+		"uk": "Ми рекомендуємо Вам включити використання JavaScript в налаштуваннях вашого браузера.",
+		"en": "We recommend that you enable JavaScript in your browser settings.",
+		"de": "Wir empfehlen Ihnen, JavaScript in Ihren Browsereinstellungen zu aktivieren.",
+		"pl": "Zalecamy włączenie obsługi JavaScript w ustawieniach przeglądarki."
+	},
+	"Агентство системных интернет-решений Wezom": {
+		"ru": "Агентство системных интернет-решений Wezom",
+		"uk": "Агентство системних інтернет-рішень Wezom",
+		"en": "Wezom Agency for System Internet Solutions",
+		"de": "Wezom Agentur für System-Internet-Lösungen",
+		"pl": "Agencja systemowych rozwiązań internetowych Wezom"
+	},
+	"Разработка сайта": {
+		"ru": "Разработка",
+		"uk": "Розробка сайту",
+		"en": "Website development",
+		"de": "Webseitenentwicklung",
+		"pl": "Tworzenie strony internetowej"
+	},
+	"404. К сожалению, страница, которую Вы запросили, не была найдена": {
+		"ru": "<em>К сожалению, страница, которую Вы запросили, не была найдена.</em>",
+		"uk": "<em>На жаль, сторінка, яку ви запросили, не була знайдена.</em>",
+		"en": "<em>Unfortunately, the page you requested was not found.</em>",
+		"de": "<em>Leider wurde die von Ihnen angeforderte Seite nicht gefunden. Sie können zum Hauptpfad gehen, um die Informationen zu finden, die Sie brauchen</em>",
+		"pl": "<em>Niestety strona, której zażądałeś, nie została znaleziona.</em>"
+	},
+	"Lorem": {
+		"ru": "Lorem",
+		"uk": "Lorem",
+		"en": "Lorem",
+		"de": "Lorem",
+		"pl": "Lorem"
+	}
+}

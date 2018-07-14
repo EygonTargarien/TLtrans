@@ -1,0 +1,194 @@
+////
+/// @group _blocks/
+////
+
+/// Описание
+.wysiwyg {
+	@include headers();
+	$gap: em(20px);
+	color: inherit;
+
+	p,
+	ul,
+	ol,
+	dl,
+	pre,
+	table:not(.draggable-table__table),
+	blockquote,
+	address,
+	.ratio-wrapper,
+	.draggable-table {
+		margin: $gap 0;
+	}
+
+	table {
+		border: 1px solid;
+		border-collapse: collapse;
+		width: 100%;
+		vertical-align: top;
+
+		p,
+		ul,
+		ol,
+		dl,
+		pre,
+		table,
+		blockquote,
+		address {
+			margin: 0;
+		}
+	}
+
+	thead,
+	tfoot,
+	tbody,
+	tr,
+	th,
+	td {
+		border: inherit;
+		vertical-align: inherit;
+	}
+
+	th,
+	td {
+		padding: rem(8px);
+	}
+
+	hr {
+		margin: $gap * 2 0;
+	}
+
+	figure {
+		margin-left: 0;
+		margin-right: 0;
+		padding: 1rem;
+		text-align: center;
+		border: 1px solid;
+		box-sizing: border-box;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	figcaption {
+		padding-top: .5rem;
+		font-style: italic;
+	}
+
+	blockquote {
+		padding: 0 $gap;
+		border: 1px solid transparent;
+		border-radius: map-get($sizes, border-radius);
+		background-color: #e9e9e9;
+	}
+
+	//pre {
+	//	border-radius: .3em;
+	//	text-shadow: 0 1px map-get($colors, white);
+	//	font-family: map-get($font-family, monospace);
+	//	background-color: #fdf6e3;
+	//	tab-size: 4;
+	//}
+
+	:not(pre) > code,
+	kbd,
+	samp {
+		border-radius: .3em;
+		text-shadow: 0 1px #fff;
+		font-family: map-get($font-family, monospace);
+		padding: .1em 6px;
+		white-space: normal;
+		hyphens: none;
+		tab-size: 4;
+		word-spacing: normal;
+		word-break: normal;
+		word-wrap: normal;
+		text-align: left;
+	}
+
+	:not(pre) > code {
+		background-color: #fdf6e3;
+	}
+
+	kbd {
+		background-color: #e5e5fb;
+	}
+
+	samp {
+		background-color: #fde6e3;
+	}
+
+	dt {
+		font-weight: bold;
+	}
+
+	dd + dt {
+		margin-top: $gap / 2;
+	}
+
+	a {
+		color: map-get($colors-link, default);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+			color: map-get($colors-link, hover);
+		}
+
+		&:active {
+			color: map-get($colors-link, active);
+		}
+
+		&[href^="//"],
+		&[href^="http://"],
+		&[href^="https://"] {
+			&[target="_blank"] {
+				background: url(./static/pic/external-link-hover.svg) top left / 0 no-repeat, url(./static/pic/external-link-active.svg) top left / 0 no-repeat;
+
+				&::after {
+					content: "";
+					width: 1em;
+					height: 1em;
+					margin-left: 1px;
+					display: inline-block;
+					vertical-align: middle;
+					background: url(./static/pic/external-link.svg) no-repeat;
+					background-size: contain;
+				}
+
+				&:hover {
+					&::after {
+						background-image: url(./static/pic/external-link-hover.svg);
+					}
+				}
+
+				&:active {
+					&::after {
+						background-image: url(./static/pic/external-link-active.svg);
+					}
+				}
+			}
+		}
+
+		&[href^="mailto:"] {
+			&::before {
+				content: "\2709\00a0";
+			}
+		}
+
+		&[href^="tel:"] {
+			&::before {
+				content: "\2706\00a0";
+			}
+		}
+	}
+
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,31 @@
+<%
+	/** @namespace app
+	 * @see module:core
+	 * @see module:docs */
+
+	/** Стандартный лейаут страниц
+	 * @name default-view */
+
+	/** установка лейаута */
+	app.setLayout('_base.ejs');
+
+	/** установка блока с куки */
+	app.block('cookie', app.widget('ui/cookie.ejs'));
+
+	// Выгружаем инструменты
+	const {Button} = app.el;
+%>
+
+<div class="wrapper">
+	<div class="section section--mainScreen _flex-grow">
+		<%- app.body %>
+	</div>
+	<div class="section ">
+	</div>
+</div>
+
+<div class="anchor scroll-up js-init" data-scroll-window="up">
+	<div class="anchor__icon"></div>
+</div>
+
+

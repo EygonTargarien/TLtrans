@@ -1,0 +1,50 @@
+<%
+	/**
+	 * @name forms/demo-form-check.ejs */
+
+	// Выгружаем инструменты
+	const {FormCheck, LabelError, Button} = app.el;
+%>
+<div class="demo">
+	<div class="title title--size-h3">Check</div>
+	<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+		<div class="form-group">
+			<%- new FormCheck({
+				name: 'checkbox',
+				value: '1',
+				innerHTML: 'checkbox 1'
+			}) %>
+			<%- new FormCheck({
+				name: 'checkbox',
+				value: '2',
+				innerHTML: 'checkbox 2'
+			}) %>
+			<div>
+				<%- new LabelError('checkbox') %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%- new FormCheck({
+				type: 'radio',
+				name: 'radio',
+				value: '1',
+				innerHTML: 'radio 1'
+			}) %>
+			<%- new FormCheck({
+				type: 'radio',
+				name: 'radio',
+				value: '2',
+				innerHTML: 'radio 2'
+			}) %>
+			<div>
+				<%- new LabelError('radio') %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%- new Button.Submit() %>
+			<%- new Button.Reset() %>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,548 @@
+<?php if (!defined('HOST')) { define('HOST', '../../'); } $hiddenFolder = 'hidden/'; require_once($hiddenFolder . 'HTML.php'); use Core\HTML;  if (!function_exists('__')) { require_once($hiddenFolder . 'i18n/I18n.php'); \I18n::lang('en'); } ?>
+<!doctype html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>UI Типография</title>
+		<meta name="description" lang="en" content="description">
+		<meta name="keywords" lang="en" content="keywords">
+
+		<?php /* @TODO мета тег, только для проекта верстки */ ?>
+		<meta name="robots" content="noindex, nofollow">
+
+		<?php /* Open Graph */ ?>
+		<meta property="og:title" content="UI Типография">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="wezom-starter-template-default">
+		<meta property="og:url" content="http://TLtrans/ui-wysiwyg">
+		<meta property="og:description" content="Краткий текст (новости, товара и т.д)">
+
+		<?php /* Touch */ ?>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+
+		<?php /* Viewport */ ?>
+
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+		<meta property="og:url" content="https://www.your-domain.com/your-page.html" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Your Website Title" />
+		<meta property="og:description" content="Your description" />
+		<meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
+
+		<?php /* Favicons */ ?>
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo HTML::media( 'assets/favicons/apple-touch-icon.png', false, true ); ?>">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo HTML::media( 'assets/favicons/favicon-32x32.png', false, true ); ?>">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo HTML::media( 'assets/favicons/favicon-16x16.png', false, true ); ?>">
+		<link rel="manifest" href="<?php echo HTML::media( 'assets/favicons/manifest.json', false, false ); ?>">
+		<link rel="mask-icon" href="<?php echo HTML::media( 'assets/favicons/safari-pinned-tab.svg', false, true ); ?>" color="#d01400">
+		<meta name="apple-mobile-web-app-title" content="Site name">
+		<meta name="application-name" content="Site name">
+		<meta name="msapplication-config" content="<?php echo HTML::media( 'assets/favicons/browserconfig.xml', false, true ); ?>">
+		<meta name="theme-color" content="#d01400">
+
+		<?php /* Основные стили страницы */ ?>
+		<style id="webpack-style-loader-insert-before-this"></style>
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/vendors-and-helpers.css', false, true ); ?>">
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/editor.css', false, true ); ?>">
+		<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/style.css', false, true ); ?>">
+
+		<?php /* @TODO Общие критикал скрипты для всех страниц */ ?>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/static/critical/svg4everybody.js' ); ?>
+;(function(){document.addEventListener("DOMContentLoaded",function(){svg4everybody()})})();</script>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/critical/localstorage-test.js' ); ?></script>
+		<script><?php echo file_get_contents( HOST . 'Media/assets/js/critical/localstorage-fonts.js' ); ?>
+;(function(window){window.loadFontsToLocalStorage('Fonts-WEZOM-STARTER-TEMPLATE-DEFAULT','<?php echo HTML::media( 'assets/css/static/fonts/b64-woff.css', false, true ); ?>','<?php echo HTML::media( 'assets/css/static/fonts/b64-woff2.css', false, true ); ?>');})(window);</script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="section section--mainScreen _flex-grow">
+
+				<div class="section _pt-def">
+					<div class="container">
+						<div class="title title--size-h1">UI Типография</div>
+
+						<div class="breadcrumbs">
+
+							<span>
+								<a href="index.html">Главная страница</a>
+							</span>
+
+							<span>
+								<a href="ui.html">UI Kit</a>
+							</span>
+
+							<span>
+								<a>UI Типография</a>
+							</span>
+
+						</div>
+
+						<div class="wysiwyg js-init" data-wrap-media data-prismjs data-draggable-table>
+							<h1>Заголовок 1 уровня</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							<h2>Заголовок 2 уровня</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam?</p>
+							<h3>Заголовок 3 уровня</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							<h4>Заголовок 4 уровня</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam?</p>
+							<h5>Заголовок 5 уровня</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora?</p>
+							<h6>Заголовок 6 уровня</h6>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							<hr>
+							<h2>Форматирование текста</h2>
+							<p>Краткая демонстрация текстовых элементов.</p>
+							<h4>Параграф</h4>
+							<p>Элемент “параграф”, который создаеться тегом <code>&lt;p&gt;...&lt;/p&gt;</code> определяет текстовый абзац(создает новый параграф). Абзац является блочным элементом, всегда начинается с новой строки и имеет отсуп до и после себя. Абзац не позволяет вкладывать внутрь себя такие друшие блочные элементы, к примеру <code>&lt;address&gt;...&lt;/address&gt;</code> (информации об авторе), <code>&lt;blockquote&gt;...&lt;/blockquote&gt;</code> (блочная цитата), <code>&lt;table&gt;...&lt;/table&gt;</code> (таблица), а также другие абзаци <code>&lt;p&gt; &lt;p&gt; ... &lt;/p&gt;</code></p>
+							<h4>Перевод строки</h4>
+							<p>Если вам нужно принудительно перевести строку текста на новую линию,
+								<br>без создания нового абзаца и верстикальных отступов между - используйте одинарный элемент <code>&lt;br&gt;</code>.</p>
+							<h4>Ссылки</h4>
+							<p>Чтобы превратить ваш текст в гиперссылку, нужно использовать
+								<a href="#" title="#">элемент &lt;a&gt;</a>
+								,
+								<br>вместе с атрибутом <code>&lt;a href=&quot;URL&quot;&gt;...&lt;/a&gt;</code> для указания адреса перехода
+								<br>или для указания якоря - <code>&lt;a name=&quot;anchor&quot;&gt;...&lt;/a&gt;</code></p>
+							<p>Пример ссылок на внешние ресурсы</p>
+							<ul>
+								<li>
+									<a href="http://wezom.com.ua/" title="http://wezom.com.ua/" target="_blank" rel="noopener">Агентство системных интернет-решений Wezom</a>
+									- Создание и продвижение сайтов. Разработка мобильных приложений</li>
+								<li>
+									<a href="https://wezom.pl/" title="https://wezom.pl/" target="_blank" rel="noopener">Wezom Agencja Interaktywna</a>
+									- Efektywne rozwiązania E-marketingu</li>
+							</ul>
+							<p>Пример ссылок с действием браузера</p>
+							<ul>
+								<li>
+									<a href="mailto:info@wezom.kiev.ua" title="Контактный e-mail киевского офиса">info@wezom.kiev.ua</a>
+									- Контактный e-mail киевского офиса</li>
+								<li>
+									<a href="tel:+380443626446" title="Контактный телефон киевского офиса">+38 (044) 362 64 46</a>
+									- Контактный телефон киевского офиса</li>
+							</ul>
+							<h4>Акценты в тексте</h4>
+							<p>Вы можете отформатировать текст используя такие элементы, как <code>&lt;i&gt;...&lt;/i&gt;</code> или <code>&lt;em&gt;...&lt;/em&gt;</code> ,
+								<em>чтобы сделать ваш текст наклонным</em>.</p>
+							<p>Вы также можете использовать <code>&lt;q&gt;...&lt;/q&gt;</code> -
+								<q>строчные цитаты, которые в отличии от блочных, позволяют вложенность внутри абзаца</q>.</p>
+							<p>При помощи элементов <code>&lt;b&gt;...&lt;/b&gt;</code> или <code>&lt;strong&gt;...&lt;/strong&gt;</code> - можно
+								<strong>обозначить важный текст жирностью шрифта</strong>.</p>
+							<p>Для
+								<ins>подчеркивания текста</ins> используйте <code>&lt;u&gt;...&lt;/u&gt;</code> или <code>&lt;ins&gt;...&lt;/ins&gt;</code>, a для
+								<del>перечеркивания</del> - <code>&lt;del&gt;...&lt;/del&gt;</code>.</p>
+							<p>Также можно
+								<mark>выделить нужную часть текста</mark> при помощи элемента <code>&lt;mark&gt;...&lt;/mark&gt;</code> .</p>
+							<p>Также можно использовать специальные элементы <code>&lt;sup&gt;...&lt;/sup&gt;</code>
+								<sup>Отображает шрифт в виде верхнего индекса</sup>
+								<br>и <code>&lt;sub&gt;...&lt;/sub&gt;</code>
+								<sub>Отображает шрифт в виде нижнего индекса.</sub>
+							</p>
+							<p>Элемент <code>&lt;small&gt;...&lt;/small&gt;</code>
+								<small>уменьшает размер шрифта.</small>
+							</p>
+							<p>Элемент <code>&lt;code&gt;...&lt;/code&gt;</code> предназначен для отображения одной или нескольких строк текста, который представляет собой программный код
+								<br>
+								<small>
+									<em>Пример:</em>
+								</small>
+								<br>Чтобы узнать контекст метода нужно вызвать <code>console.log(this);</code>.</p>
+							<p>Элемент
+								<kbd>&lt;kbd&gt;</kbd> используется для обозначения текста, который набирается на клавиатуре или для названия клавиш
+								<br>
+								<small>
+									<em>Пример:</em>
+								</small>
+								<br>Чтобы вызвать “Диспетчер задач” нажмите на клавиатуре вместе 3 клавиши -
+								<kbd>Ctrl + Alt + Del</kbd>.</p>
+							<p>Элемент
+								<samp>&lt;samp&gt;</samp> используется для отображения текста, который является результатом вывода компьютерной программы или скрипта
+								<br>
+								<small>
+									<em>Пример:</em>
+								</small>
+								<br>
+								<samp>К сожалению, Ваш браузер НЕ поддерживает современные возможности JavaScript!</samp>
+							</p>
+							<p>Элемент <code>&lt;abbr&gt;...&lt;/abbr&gt;</code> указывает, что
+								<abbr title="последовательность символов">ПС</abbr> является аббревиатурой. С помощью атрибута дается расшифровка сокращения - <code>&lt;abbr title=&quot;последовательность символов&quot;&gt;ПС&lt;/abbr&gt;</code>, что позволяет понимать аббревиатуру тем людям, которые с ней не знакомы.
+								<br>Кроме того,
+								<em>поисковые системы индексируют полнотекстовый вариант сокращения</em>, что может использоваться для повышения рейтинга документа.</p>
+							<p>Как правило, когда, в документе, упоминается
+								<dfn title="это новый термин">новый термин</dfn>, он выделяется курсивом и дается его определение. При использовании этого термина в дальнейшем, он считается уже известным читателю. Элемент <code>&lt;dfn&gt;</code> применяется для выделения тыдел терминов при их первом появлении в тексте. С помощью атрибута <code>title</code> вы можете дать более подробную расшифровку термина.
+								<br>
+								<small>
+									<em>Пример:</em>
+								</small>
+								<br><code>&lt;dfn title=&quot;это новый термин&quot;&gt;новый термин&lt;/dfn&gt;</code></p>
+							<h4>Выделение блоков текста</h4>
+							<blockquote>
+								<p>Элемент <code>&lt;blockquote&gt;...&lt;/blockquote&gt;</code> используется для обозначения цитат, длинных выписок, афоризмов и прочее, который создается в новом блоке с пробелами до и после.</p>
+							</blockquote>
+							<pre><code class="language-markup">Тег &lt;pre&gt;...&lt;/pre&gt; определяет блок предварительно форматированного текста.
+    Такой текст отображается обычно моноширинным шрифтом
+    и со всеми пробелами    между    словами.
+        По умолчанию, любое количество пробелов идущих в коде подряд,
+        на веб-странице показывается как один.
+
+    Тег &lt;pre&gt; позволяет обойти эту особенность и отображать текст
+        как
+        требуется
+        разработчику.</code>
+</pre>
+							<address>Элемент <code>&lt;address&gt;...&lt;/address&gt;</code> предназначен для хранения информации об авторе (НЕ адреса и контакты компании, прочее) и может включать в себя любые элементы HTML вроде ссылок, текста, выделений и т.д.</address>
+
+							<hr>
+							<h2>Списки</h2>
+							<h4>Маркированный список</h4>
+							<p>Элемент <code>&lt;ul&gt;...&lt;/ul&gt;</code> устанавливает маркированный (неупорядоченный) список. Каждый пункт списка должен начинаться с элемента <code>&lt;li&gt;...&lt;/li&gt;</code>. Если к <code>&lt;ul&gt;</code> применяется таблица стилей, то элементы <code>&lt;li&gt;</code> наследуют эти свойства.</p>
+							<p>
+								<em>Пример:</em>
+							</p>
+							<pre><code class="language-markup">&lt;ul&gt;
+    &lt;li&gt;пункт маркированного списка&lt;/li&gt;
+    &lt;li&gt;пункт маркированного списка&lt;/li&gt;
+    &lt;li&gt;пункт маркированного списка
+        &lt;ul&gt;
+            &lt;li&gt;вложенный пункт маркированного списка&lt;/li&gt;
+            &lt;li&gt;вложенный пункт маркированного списка&lt;/li&gt;
+            &lt;li&gt;вложенный пункт маркированного списка
+                &lt;ol&gt;
+                    &lt;li&gt;вложенный пункт маркированного списка&lt;/li&gt;
+                    &lt;li&gt;вложенный пункт маркированного списка&lt;/li&gt;
+                    &lt;li&gt;вложенный пункт маркированного списка&lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
+							<p>
+								<em>Результат:</em>
+							</p>
+							<ul>
+								<li>пункт маркированного списка</li>
+								<li>пункт маркированного списка</li>
+								<li>пункт маркированного списка
+									<ul>
+										<li>вложенный пункт маркированного списка</li>
+										<li>вложенный пункт маркированного списка</li>
+										<li>вложенный пункт маркированного списка
+											<ul>
+												<li>вложенный пункт маркированного списка</li>
+												<li>вложенный пункт маркированного списка</li>
+												<li>вложенный пункт маркированного списка</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4>Нумерованный список</h4>
+							<p>Элемент <code>&lt;ol&gt;...&lt;/ol&gt;</code> устанавливает нумерованный (упорядоченный) список. Каждый элемент списка должен начинаться с <code>&lt;li&gt;...&lt;/li&gt;</code>. Если к <code>&lt;ol&gt;</code> применяется таблица стилей, то элементы <code>&lt;li&gt;</code> наследуют эти свойства.</p>
+							<p>
+								<em>Пример:</em>
+							</p>
+							<pre><code class="language-markup">&lt;ol&gt;
+    &lt;li&gt;пункт нумерованного списка&lt;/li&gt;
+    &lt;li&gt;пункт нумерованного списка&lt;/li&gt;
+    &lt;li&gt;пункт нумерованного списка
+        &lt;ol&gt;
+            &lt;li&gt;вложенный пункт нумерованного списка&lt;/li&gt;
+            &lt;li&gt;вложенный пункт нумерованного списка&lt;/li&gt;
+            &lt;li&gt;вложенный пункт нумерованного списка
+                &lt;ol&gt;
+                    &lt;li&gt;вложенный пункт нумерованного списка&lt;/li&gt;
+                    &lt;li&gt;вложенный пункт нумерованного списка&lt;/li&gt;
+                    &lt;li&gt;вложенный пункт нумерованного списка&lt;/li&gt;
+                &lt;/ol&gt;
+            &lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+							<p>
+								<em>Результат:</em>
+							</p>
+							<ol>
+								<li>пункт нумерованного списка</li>
+								<li>пункт нумерованного списка</li>
+								<li>пункт нумерованного списка
+									<ol>
+										<li>вложенный пункт нумерованного списка</li>
+										<li>вложенный пункт нумерованного списка</li>
+										<li>вложенный пункт нумерованного списка
+											<ol>
+												<li>вложенный пункт нумерованного списка</li>
+												<li>вложенный пункт нумерованного списка</li>
+												<li>вложенный пункт нумерованного списка</li>
+											</ol>
+										</li>
+									</ol>
+								</li>
+							</ol>
+							<h4>Список определений</h4>
+							<p>Элемент <code>&lt;dl&gt;...&lt;/dl&gt;</code> входит в тройку элементов <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code>, предназначенных для создания списка описаний. Каждый такой список начинается с контейнера <code>&lt;dl&gt;</code>, куда входит элемент <code>&lt;dt&gt;</code> создающий термин и элемент <code>&lt;dd&gt;</code> задающий описание этого термина.</p>
+							<p>
+								<em>Пример:</em>
+							</p>
+							<pre><code class="language-markup">&lt;dl&gt;
+    &lt;dt&gt;Что такое Тег?&lt;/dt&gt;
+    &lt;dd&gt;Тег — это специальный символ разметки, который применяется для вставки различных элементов на веб-страницу таких как: рисунки, таблицы, ссылки и др., и для изменения их вида.&lt;/dd&gt;
+
+    &lt;dt&gt;Что такое HTML-документ?&lt;/dt&gt;
+    &lt;dd&gt;Обычный текстовый файл, который может содержать в себе текст, теги и стили. Изображения и другие объекты хранятся отдельно. Содержимое такого файла обычно называется HTML-код.&lt;/dd&gt;
+
+    &lt;dt&gt;Что такое Сайт?&lt;/dt&gt;
+    &lt;dd&gt;Cайт — это набор отдельных веб-страниц, которые связаны между собой ссылками и единым оформлением.&lt;/dd&gt;
+&lt;/dl&gt;</code>
+</pre>
+							<p>
+								<em>Результат:</em>
+							</p>
+							<dl>
+								<dt>Что такое Тег?</dt>
+								<dd>Тег — это специальный символ разметки, который применяется для вставки различных элементов на веб-страницу таких как: рисунки, таблицы, ссылки и др., и для изменения их вида.</dd>
+								<dt>Что такое HTML-документ?</dt>
+								<dd>Обычный текстовый файл, который может содержать в себе текст, теги и стили. Изображения и другие объекты хранятся отдельно. Содержимое такого файла обычно называется HTML-код.</dd>
+								<dt>Что такое Сайт?</dt>
+								<dd>Cайт — это набор отдельных веб-страниц, которые связаны между собой ссылками и единым оформлением.</dd>
+							</dl>
+
+							<hr>
+							<h2>Таблицы</h2>
+							<table>
+								<thead>
+									<tr>
+										<th>Table heading</th>
+										<th>Table heading</th>
+										<th>Table heading</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Lorem ipsum dolor sit amet.</td>
+										<td>Alias amet beatae blanditiis.</td>
+										<td>Lorem ipsum dolor sit amet.</td>
+									</tr>
+									<tr>
+										<td>Alias amet beatae blanditiis.</td>
+										<td>Lorem ipsum dolor sit amet.</td>
+										<td>Alias amet beatae blanditiis.</td>
+									</tr>
+								</tbody>
+							</table>
+							<table>
+								<thead>
+									<tr>
+										<th>Table heading</th>
+										<th>Table heading</th>
+										<th>Table heading</th>
+										<th>Table heading</th>
+										<th>Table heading </th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+										<td>Alias amet beatae blanditiis consectetur.</td>
+										<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+										<td>Alias amet beatae blanditiis consectetur.</td>
+										<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+									</tr>
+									<tr>
+										<td>Alias amet beatae blanditiis consectetur.</td>
+										<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+										<td>Alias amet beatae blanditiis consectetur.</td>
+										<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+										<td>Alias amet beatae blanditiis consectetur. Alias amet beatae blanditiis consectetur.</td>
+									</tr>
+									<tr>
+										<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+										<td>Alias amet beatae blanditiis consectetur.</td>
+										<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+										<td>Alias amet beatae blanditiis consectetur.</td>
+										<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+									</tr>
+									<tr>
+										<td>Alias amet beatae blanditiis consectetur.</td>
+										<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+										<td>Alias amet beatae blanditiis consectetur. Alias amet beatae blanditiis consectetur.</td>
+										<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+										<td>Alias amet beatae blanditiis consectetur.</td>
+									</tr>
+								</tbody>
+							</table>
+							<hr>
+
+							<h2>Media</h2>
+
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+							<iframe width="1280" height="720" src="https://www.youtube.com/embed/4GUwXxqwyu4?rel=0" frameborder="0" allowfullscreen></iframe>
+
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora? Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+							<video controls width="1280" height="720" src="<?php echo HTML::media( 'assets/files/video.mp4', false, true ); ?>" poster="<?php echo HTML::media( 'assets/files/poster.jpg', false, true ); ?>"></video>
+
+							<table>
+								<thead>
+									<tr>
+										<th>Table heading</th>
+										<th>Table heading</th>
+										<th>Table heading</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Lorem ipsum dolor sit amet.</td>
+										<td>Alias amet beatae blanditiis.</td>
+										<td>
+											<table>
+												<thead>
+													<tr>
+														<th>Table heading</th>
+														<th>Table heading</th>
+														<th>Table heading</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<table>
+																<thead>
+																	<tr>
+																		<th>Table heading</th>
+																		<th>Table heading</th>
+																		<th>Table heading</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>Lorem ipsum dolor sit amet.</td>
+																		<td>Alias amet beatae blanditiis.</td>
+																		<td>Lorem ipsum dolor sit amet.</td>
+																	</tr>
+																	<tr>
+																		<td>Alias amet beatae blanditiis.</td>
+																		<td>Lorem ipsum dolor sit amet.</td>
+																		<td>Alias amet beatae blanditiis.</td>
+																	</tr>
+																</tbody>
+															</table>
+														</td>
+														<td>Alias amet beatae blanditiis.</td>
+														<td>Lorem ipsum dolor sit amet.</td>
+													</tr>
+													<tr>
+														<td>Alias amet beatae blanditiis.</td>
+														<td>Lorem ipsum dolor sit amet.</td>
+														<td>Alias amet beatae blanditiis.</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td>Alias amet beatae blanditiis.</td>
+										<td>Lorem ipsum dolor sit amet.</td>
+										<td>Alias amet beatae blanditiis.</td>
+									</tr>
+								</tbody>
+							</table>
+
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto distinctio eos ex ipsum laudantium optio perferendis quasi quibusdam quisquam, totam? Ad alias, culpa facilis impedit ipsum molestiae optio placeat tempora? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+							<audio controls src="<?php echo HTML::media( 'assets/files/audio.mp3', false, true ); ?>"></audio>
+
+							<hr>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			<div class="section ">
+			</div>
+		</div>
+
+		<div class="anchor scroll-up js-init" data-scroll-window="up">
+			<div class="anchor__icon"></div>
+		</div>
+
+		<?php /* @TODO Заменить на путь к файлу js переводам админки `Media/js-translations/${lang}.js` */ ?>
+		<script src="<?php echo HTML::media( '../_HTML/dist/hidden/js-translations/en.js', false, true ); ?>"></script>
+		<script>
+	window.wezomConfig = {
+		<?php /* @TODO Заменить Google Maps JavaScript API
+	https://developers.google.com/maps/documentation/javascript/get-api-key#key */ ?>
+		googleMapQueries: {
+			key: 'AIzaSyA0iD6g_lPIH2uMxwOwennIBu5q1qszd_s',
+			language: 'uk',
+			region: 'UA'
+		}
+	}
+</script>
+		<?php /* Основные скрипты страницы */ ?>
+		<script src="<?php echo HTML::media( 'assets/js/modernizr.js', false, true ); ?>"></script>
+		<script src="<?php echo HTML::media( 'assets/js/initialize.js', false, true ); ?>"></script>
+
+		<?php /* @TODO Определение старых браузеров */ ?>
+		<script>window.$wzmOld_URL_IMG = '<?php echo HTML::media( 'assets/css/static/pic/wezom-info-red.gif', false, true ); ?>';</script>
+		<script async defer src="<?php echo HTML::media( 'assets/js/static/wezom-old.min.js', false, true ); ?>"></script>
+
+		<?php /* Плашка с уведомлением об отключенном JavaScript */ ?>
+
+		<noscript>
+			<link rel="stylesheet" href="<?php echo HTML::media( 'assets/css/noscript.css', false, true ); ?>">
+			<div class="noscript-msg">
+				<input id="noscript-msg__input" class="noscript-msg__input" type="checkbox" title="Закрыть">
+				<div class="noscript-msg__container">
+					<label class="noscript-msg__close" for="noscript-msg__input">&times;</label>
+					<a class="noscript-msg__wezom-link" href="http://wezom.com.ua/" target="_blank" title="Агентство системных интернет-решений Wezom">&nbsp;</a>
+					<div class="noscript-msg__content">
+
+						<p>В Вашем браузере
+							<b>отключен JavaScript!</b> Для корректной работы с сайтом необходима поддержка Javascript.
+						</p>
+						<p>Мы рекомендуем Вам включить использование JavaScript в настройках вашего браузера.</p>
+					</div>
+				</div>
+			</div>
+		</noscript>
+
+		<div class="cookie is-hidden" data-cookie-info>
+			<div class="container">
+				<div class="grid grid--space-def _pt-def">
+					<div class="gcell _flex-grow">
+						<p class="cookie__content">
+							Этот сайт использует файлы cookie и похожие технологии, чтобы гарантировать максимальное удобство пользователям.
+							<br> При использовании данного сайта, вы подтверждаете свое согласие на использование файлов cookie в соответствии с настоящим уведомлением в отношении данного типа файлов
+							<br> Если вы не согласны с тем, чтобы мы использовали данный тип файлов, то вы должны соответствующим образом установить настройки вашего браузера или не использовать сайт TLtrans.
+						</p>
+					</div>
+					<div class="gcell _flex-noshrink">
+						<span class="button" data-cookie-submit>
+							<span>Согласен</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!---->
+
+	</body>
+</html>

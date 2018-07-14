@@ -1,0 +1,30 @@
+<%
+	/** Подключение внешних скриптов
+	 * @name scripts */
+
+	// выгружаем инструменты
+	const {lang} = app.data;
+	const {media, comment} = app.module;
+%>
+<%- comment.todoPhp('Заменить на путь к файлу js переводам админки `Media/js-translations/${lang}.js`') %>
+<script src="<%- media(`../_HTML/dist/hidden/js-translations/${lang}.js`) %>"></script>
+<script>
+	window.wezomConfig = {
+		<%- comment.todoPhp(
+			'Заменить Google Maps JavaScript API',
+			'https://developers.google.com/maps/documentation/javascript/get-api-key#key'
+		) %>
+		googleMapQueries: {
+			key: 'AIzaSyA0iD6g_lPIH2uMxwOwennIBu5q1qszd_s',
+			language: 'uk',
+			region: 'UA'
+		}
+	}
+</script>
+<%- comment.php('Основные скрипты страницы') %>
+<script src="<%- media('assets/js/modernizr.js') %>"></script>
+<script src="<%- media('assets/js/initialize.js') %>"></script>
+
+<%- comment.todoPhp('Определение старых браузеров') %>
+<script>window.$wzmOld_URL_IMG = '<%- media('assets/css/static/pic/wezom-info-red.gif') %>';</script>
+<script async defer src="<%- media('assets/js/static/wezom-old.min.js') %>"></script>

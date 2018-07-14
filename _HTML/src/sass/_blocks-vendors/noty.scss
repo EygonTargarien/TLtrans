@@ -1,0 +1,13 @@
+////
+/// @group _vendors/
+////
+
+// sass-lint:disable class-name-format
+.noty_has_timeout {
+	&.noty_has_progressbar {
+		.noty_progressbar {
+			background-color: #000;
+			opacity: .4;
+		}
+	}
+}

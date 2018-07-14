@@ -1,0 +1,25 @@
+.inf{
+	border: 1px solid map_get($colors,bg);
+	border-radius: 10px;
+	overflow: hidden;
+	&__head{
+		text-align: center;
+		background: map_get($colors, bg);
+		padding: 10px;
+	}
+	&__cnt{
+		padding: 20px;
+	}
+	&__footer{
+		display: block;
+		text-align: center;
+		background: map_get($colors, bg);
+		padding: 10px;
+		transition: background 0.3s;
+		&:hover{
+			cursor: pointer;
+			background: map_get($colors, border);
+			color: map-get($colors,alt);
+		}
+	}
+}

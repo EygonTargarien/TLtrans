@@ -1,0 +1,54 @@
+////
+/// @group style.scss
+////
+
+// сбор всех основных блоков для текущего проекта
+// данный файл только импортирует нужные блоки кода
+// написание чистого кода в этом файле - запрещается
+// -------------------------------------------------Т
+
+@import "_settings/all";
+@import "_system/extendPlugins";
+
+// structure
+@import "_blocks/wrapper";
+@import "_blocks/section";
+@import "_blocks/container";
+@import "_blocks/breadcrumbs";
+
+// ui
+@import "_blocks/demo";
+@import "_blocks/cookie";
+@import "_blocks/ratio";
+@import "_blocks/preloader";
+@import "_blocks/sitemap";
+@import "_blocks/wstabs";
+@import "_blocks/scroll-up";
+@import "_blocks/title";
+@import "_blocks/pagination";
+@import "_blocks/google-map";
+@import "_blocks/draggable-table";
+
+// popup
+@import "_blocks/popup";
+
+// form
+@import "_blocks/form";
+@import "_blocks/button";
+
+//blocks
+@import "_blocks/menu";
+@import "_blocks/link";
+@import "_blocks/slider";
+@import "_blocks/status";
+@import "_blocks/navigation";
+@import "_blocks/inf";
+@import "_blocks/anchor";
+@import "_blocks/repo";
+
+// moduls
+@import "_moduls/user";
+
+//section
+@import "_section/promo";
+

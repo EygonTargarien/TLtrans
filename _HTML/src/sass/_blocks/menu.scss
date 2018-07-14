@@ -1,0 +1,81 @@
+.menu{
+  border-bottom: 5px solid map_get($colors, main);
+  ul{
+    display: flex;
+    & li{
+      &:last-child{
+        ul{
+          left: auto;
+          right: 0;
+        }
+      }
+
+    }
+    ul{
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 140%;
+      left: 0;
+      flex-wrap: wrap;
+      z-index: 3;
+      width: 250px;
+      background: #fff;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      transition: opacity 0.3s,top 0.3s;
+      padding: 10px 10px;
+      border-radius: 5px;
+      li{
+        justify-content: flex-start;
+        width: 100%;
+        padding: 0px 0;
+        border-bottom: 1px solid map_get($colors, main);
+        &:last-child{
+          border-bottom: none ;
+        }
+      }
+      a{
+        font-size: 20px;
+        padding: 10px 0;
+        width: 100%;
+        display: block;
+        transition: padding 0.3s;
+        &:hover{
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  li{
+    font-size: 10px;
+    position: relative;
+    text-transform: uppercase;
+    line-height: 16px;
+    flex-grow: 1;
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+      & > ul{
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+
+      }
+    }
+  }
+  a{
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: map_get($font-family, alt);
+  }
+
+
+  &__navigation{
+    &>a{
+      color: map_get($colors,alt);
+    }
+  }
+}

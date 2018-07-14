@@ -1,0 +1,64 @@
+<%
+	/** Шаблон главной страницы
+	 * @name index.ejs */
+
+	/** установка лейаута страницы */
+	app.setLayout('default-view.ejs');
+
+	/** расширение глобального объекта app
+	 * @see module:core */
+	app.require('core.js')(app);
+
+	// выгружаем инструменты
+	const {currentView} = app.data;
+
+	// хлебные крошки
+	const breadcrumbsList = [
+		currentView
+	];
+	const {views, indexHref} = app.data;
+	const {media} = app.module;
+	const {SvgIcon} = app.el;
+%>
+
+<section class="promo js-init" data-github>
+	<div class="promo__video">
+		<video width="100%" autoplay="autoplay" loop>
+			<source src="<%- media('assets/css/static/pic/video/promo.mp4')%>" type="video/mp4">
+		</video>
+	</div>
+	<div class="container">
+		<div class="promo__main">
+			<div class="promo__cnt">
+				<div class="promo__title">Search user on github</div>
+				<div class="promo__demo">
+					<div class="promo__area-wrap">
+						<input class="promo__area js-area" type="text" placeholder="ENTER HERE USERNAME">
+						<div class="promo__error js-error">User not found.</div>
+					</div>
+
+					<button class="button button--demo js-btn"><span>Run search</span></button>
+				</div>
+
+				<div class="user js-user">
+					<div class="grid grid--hspace-xl">
+						<div class="gcell gcell--12 gcell--md-5 user__stick">
+							<div class="user__info js-userCart">
+							</div>
+						</div>
+						<div class="gcell gcell--12 gcell--md-7">
+							<div class="user__repo">
+								<div class="user__title">User's repositories </div>
+								<div class="user__repo-cnt js-repo">
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+

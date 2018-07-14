@@ -1,0 +1,69 @@
+<%
+	/**
+	 * @name forms/demo-form-select.ejs */
+
+	// Выгружаем инструменты
+	const {FormSelect, LabelError, Button} = app.el;
+%>
+<div class="demo">
+	<div class="title title--size-h3">Select</div>
+	<form class="form js-init" method="post" data-ajax="./hidden/response/demo.json">
+		<div class="form-group">
+			<%- new FormSelect({
+				name: 'select',
+				innerHTML: `
+					<option selected disabled>Select</option>
+					<option value="01">item 01</option>
+					<option value="02">item 02</option>
+					<option value="03">item 03</option>
+					<option value="04">item 04</option>
+					<option value="05">item 05</option>
+				`
+			}) %>
+		</div>
+
+		<div class="form-group">
+			<%- new FormSelect({
+				class: 's2s js-init',
+				name: 'select-2',
+				dataS2s: JSON.stringify({
+					minimumResultsForSearch: 10
+				}),
+				innerHTML: `
+					<option selected disabled>Select single option</option>
+					<option value="01">item 01</option>
+					<option value="02">item 02</option>
+					<option value="03">item 03</option>
+					<option value="04">item 04</option>
+					<option value="05">item 05</option>
+				`
+			}) %>
+			<%- new LabelError('select-2') %>
+		</div>
+
+		<div class="form-group">
+			<%- new FormSelect({
+				class: 's2s js-init',
+				name: 'select-2-multiple',
+				multiple: true,
+				dataS2s: JSON.stringify({
+					minimumResultsForSearch: 10
+				}),
+				innerHTML: `
+					<option selected disabled>Select multiple options</option>
+					<option value="01">item 01</option>
+					<option value="02">item 02</option>
+					<option value="03">item 03</option>
+					<option value="04">item 04</option>
+					<option value="05">item 05</option>
+				`
+			}) %>
+			<%- new LabelError('select-2-multiple') %>
+		</div>
+
+		<div class="form-group">
+			<%- new Button.Submit({innerHTML: 'SEND'}) %>
+			<%- new Button.Reset({innerHTML: 'Reset'}) %>
+		</div>
+	</form>
+</div>

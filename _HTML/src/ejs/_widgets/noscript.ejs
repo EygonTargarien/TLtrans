@@ -1,0 +1,27 @@
+<%
+	/** Плашка с уведомлением об отключенном JavaScript
+	 * @name noscript.ejs */
+
+	// выгружаем инструменты
+	const {media, comment} = app.module;
+%>
+<%- comment.php('Плашка с уведомлением об отключенном JavaScript') %>
+<noscript>
+	<link rel="stylesheet" href="<%- media('assets/css/noscript.css') %>">
+	<div class="noscript-msg">
+		<input id="noscript-msg__input" class="noscript-msg__input" type="checkbox" title="Закрыть">
+		<div class="noscript-msg__container">
+			<label class="noscript-msg__close" for="noscript-msg__input">&times;</label>
+			<a class="noscript-msg__wezom-link" href="http://wezom.com.ua/" target="_blank" title="Агентство системных интернет-решений Wezom">&nbsp;</a>
+			<div class="noscript-msg__content">
+				<% /* %>
+				<p><%- __('Отключен JavaScript строка 1') %></p>
+				<p><%- __('Отключен JavaScript строка 2') %></p>
+				<% */ %>
+				<p>В Вашем браузере <b>отключен JavaScript!</b> Для корректной работы с сайтом необходима поддержка
+					Javascript.</p>
+				<p>Мы рекомендуем Вам включить использование JavaScript в настройках вашего браузера.</p>
+			</div>
+		</div>
+	</div>
+</noscript>

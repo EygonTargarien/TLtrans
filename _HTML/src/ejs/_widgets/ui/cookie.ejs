@@ -1,0 +1,26 @@
+<%
+	/** Плашка с уведомлением о использовании файлов куки
+	 * @name ui/cookie.ejs */
+
+	// выгружаем инструменты
+	const {ejsPaths} = app.data;
+%>
+<div class="cookie is-hidden" data-cookie-info>
+	<div class="container">
+		<div class="grid grid--space-def _pt-def">
+			<div class="gcell _flex-grow">
+				<p class="cookie__content">
+					Этот сайт использует файлы cookie и похожие технологии, чтобы гарантировать максимальное удобство
+					пользователям. <br>
+					При использовании данного сайта, вы подтверждаете свое согласие на использование файлов cookie в
+					соответствии с настоящим уведомлением в отношении данного типа файлов <br>
+					Если вы не согласны с тем, чтобы мы использовали данный тип файлов, то вы должны соответствующим
+					образом установить настройки вашего браузера или не использовать сайт <%- ejsPaths.localFolder %>.
+				</p>
+			</div>
+			<div class="gcell _flex-noshrink">
+				<span class="button" data-cookie-submit><span>Согласен</span></span>
+			</div>
+		</div>
+	</div>
+</div>

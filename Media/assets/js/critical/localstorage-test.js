@@ -1,0 +1,1 @@
+"use strict";!function(o){o.localStorageSupport=function(t){try{return o.localStorage.setItem(t,t),o.localStorage.removeItem(t),!0}catch(t){return!1}}("test-key"),o.localStorageWrite=function(t,e){try{o.localStorage.setItem(t,e)}catch(t){console.warn("localStorageWrite"),console.warn(t)}}}(window);
